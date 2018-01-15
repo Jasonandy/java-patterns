@@ -13,8 +13,18 @@
 ![逻辑结构](http://upload-images.jianshu.io/upload_images/7802425-5d6b679ecdac9f47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 代码结构图
-![代码结构](http://upload-images.jianshu.io/upload_images/7802425-f55b56f3cd5649e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![结构图](http://upload-images.jianshu.io/upload_images/7802425-d0344f416ed446ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+责任链模式
+
+命令模式
+
+
+观察者模式
+
+状态模式
+
+访问者模式
 
 
 ### FAQ
