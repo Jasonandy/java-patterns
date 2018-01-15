@@ -1,14 +1,13 @@
 ![](http://upload-images.jianshu.io/upload_images/7802425-9eb1bcd006e34aa6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+# Ucaner
+> You are what you want to be. - w.b
+
+
 # patterns
 * Project：patternsss
 * OfficialWebsite：http://patterns.ucaner.cn
 * describe：设计模式学习笔记
-
-# Ucaner
-
-> You are what you want to be. - w.b
-
 
 ### Introduce:
 
