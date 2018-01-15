@@ -9,7 +9,8 @@
 * OfficialWebsite：http://patterns.ucaner.cn
 * describe：设计模式学习笔记
 
-### Introduce:
+### 逻辑结构图
+![逻辑结构](http://upload-images.jianshu.io/upload_images/7802425-5d6b679ecdac9f47.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ### 代码结构图
 ![代码结构](http://upload-images.jianshu.io/upload_images/7802425-f55b56f3cd5649e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
