@@ -11,13 +11,20 @@
 package cn.ucaner.pattern.create.builder;
 
 /**
- * 金刚狼的builder
- * @author Chayne_Shen 2017/3/10 0010.
+* @Package：cn.ucaner.pattern.create.builder   
+* @ClassName：WolverineBuilder   
+* @Description：   <p> 金刚狼的builder</p>
+* @Author： - DaoDou   
+* @CreatTime：2018年1月16日 下午2:05:35   
+* @Modify By：   
+* @ModifyTime：  2018年1月16日
+* @Modify marker：   
+* @version    V1.0
  */
-
 public class WolverineBuilder implements XManBuilder {
 	
     XMan mXMan;
+    
     WolverineBuilder() {
         mXMan = new XMan();
     }

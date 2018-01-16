@@ -11,11 +11,18 @@
 package cn.ucaner.pattern.create.builder;
 
 /**
- * 控制builder生产金刚狼
- * @author Chayne_Shen 2017/3/10 0010.
+* @Package：cn.ucaner.pattern.create.builder   
+* @ClassName：WolverineDirector   
+* @Description：   <p> 控制builder生产金刚狼</p>
+* @Author： - DaoDou   
+* @CreatTime：2018年1月16日 下午2:05:17   
+* @Modify By：   
+* @ModifyTime：  2018年1月16日
+* @Modify marker：   
+* @version    V1.0
  */
-
 public class WolverineDirector {
+	
     public XMan constructWolverine(WolverineBuilder wolverineBuilder) {
         return wolverineBuilder
                 .buildXFactor()
