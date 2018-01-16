@@ -22,5 +22,7 @@ package cn.ucaner.pattern.create.factory;
 * @version    V1.0
  */
 public abstract class AbsHumanFactory {
+	
     public abstract <T extends Human> T createHumen(Class<T> tClass);
+    
 }

@@ -22,5 +22,6 @@ package cn.ucaner.pattern.create.factory;
 * @version    V1.0
  */
 public interface Human {
+	
     void getColor();
 }
