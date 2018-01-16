@@ -69,12 +69,9 @@ public abstract class BaseMessage {
         getImgList().add(image);
     }
 
-    /**
-    *发送消息
-    *作者:Mirsfang
-    *日期:2017/3/8/下午12:33
-    *描述:
-    **/
+   /*
+    * 发送消息
+    */
     public void sendMessage(){
         System.out.println(getReceiver()+getMessage()+"     充气娃娃图片数量"+getImgList().size()+"     发件人"+getSend());
     }
