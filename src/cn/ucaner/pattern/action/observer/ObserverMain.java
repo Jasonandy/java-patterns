@@ -34,6 +34,7 @@ public class ObserverMain {
         getObservers(nvShen);
         //女神要出去逛街了!!!
         nvShen.goShopping();
+        
 
     }
 
@@ -42,7 +43,11 @@ public class ObserverMain {
         for (int i = 0; i < 100 ; i++) {
             DiaoSi diaosi=new DiaoSi("屌丝"+i);
             nvShen.Attach(diaosi);//添加
-            nvShen.Detach(diaosi);//删除
+            if (i%2!=0) {
+            	 //添加一个观察者
+                nvShen.Detach(diaosi);//删除 
+			}
+           
         }
     }
 

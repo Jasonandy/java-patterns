@@ -65,7 +65,9 @@ public class NvShen implements Subject{
         for (Observer observer:observersList) {
             //通知所有的跟随人员
             observer.Update();
+            observer.Say();
         }
         System.out.print("尾随大军已经出动!!!");
     }
+
 }

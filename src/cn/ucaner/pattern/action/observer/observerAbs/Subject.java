@@ -31,4 +31,5 @@ public interface Subject {
     
     //通知所有的观察者
     public void Notify();
+    
 }

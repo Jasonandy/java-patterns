@@ -48,5 +48,10 @@ public class DiaoSi  implements Observer{
         System.out.println(name+"已经知道女神出门,准备跟(wei)踪(sui)");
     }
 
+	@Override
+	public void Say() {
+		System.out.println(name+"在下想约你可以吗？");
+	}
+
 
 }
