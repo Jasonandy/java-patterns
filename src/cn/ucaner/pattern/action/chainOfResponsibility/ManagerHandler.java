@@ -33,6 +33,6 @@ public class ManagerHandler extends Handler {
 
     @Override
     public String getnName() {
-        return "牛经理";
+        return "经理";
     }
 }

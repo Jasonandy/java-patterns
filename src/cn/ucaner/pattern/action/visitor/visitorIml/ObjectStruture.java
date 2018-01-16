@@ -33,12 +33,15 @@ public class ObjectStruture {
     */
     public static Element createElement(){
         Random random=new Random();
-        if(random.nextInt(100)>50){
-        	//普通用户
-            return new ConcreateElementUser();
-        }else {
+        int flag= random.nextInt(100)%3;
+        if (0==flag) {
         	//管理员用户
             return new ConcreateElementAdmin();
-        }
+		}else if(1==flag){
+			//普通用户
+            return new ConcreateElementUser();
+		}else {
+			 return new ConcreateElementRoot();
+		}
     }
 }

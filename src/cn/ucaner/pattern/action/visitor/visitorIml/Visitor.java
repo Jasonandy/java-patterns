@@ -34,4 +34,9 @@ public class Visitor implements IVisitor {
     public void visit(ConcreateElementAdmin admin) {
         admin.doVisite();
     }
+
+	@Override
+	public void visit(ConcreateElementRoot root) {
+		root.doVisite();
+	}
 }

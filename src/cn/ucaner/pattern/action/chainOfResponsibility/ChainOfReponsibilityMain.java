@@ -29,18 +29,18 @@ public class ChainOfReponsibilityMain {
         //我要报销的钱数;
         int money=5;
         //初始化各个处理者
-        Handler manager = new ManagerHandler();
+        Handler manager = new ManagerHandler();//管
         Handler finance = new FinanceHandler();
         Handler boss = new BossHandler();
         //设置链中的顺序
-        manager.setNextHandler(finance);
-        finance.setNextHandler(boss);
+        manager.setNextHandler(finance);//先给财务
+        finance.setNextHandler(boss);//再给boss
         //开始请求
         System.out.println("我要报销"+money+"元");
         if (manager.handlerRequst(money)) {
-            System.out.println("报销成功");
+            System.out.println("报销成功！");
         } else {
-            System.out.println("报销失败");
+            System.out.println("报销失败！");
         }
     }
 

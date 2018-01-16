@@ -27,11 +27,11 @@ public class BossHandler extends Handler {
 
     @Override
     public int getLevel() {
-        return 3;
+        return 30;
     }
 
     @Override
     public String getnName() {
-        return "方老板";
+        return "老板";
     }
 }

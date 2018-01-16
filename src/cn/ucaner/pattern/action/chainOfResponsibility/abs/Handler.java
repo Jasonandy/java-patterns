@@ -26,7 +26,6 @@ public abstract class Handler {
     //下一个执行者
     private Handler nextHandler;
 
-
     //当前执行者对请求做处理
     public final boolean handlerRequst(int  handLeve){
         boolean bReq=false;
@@ -46,19 +45,21 @@ public abstract class Handler {
                     System.out.println(getnName()+" :"+nextHandler.getnName()+"说不可以审批");
                 }
             }else {
-                //到这边已经没有下一个处理者了
+                //到这边已经没有下一个处理者了 
                 System.out.println(getnName()+" :金额太大了");
             }
         }
         return bReq;
     }
 
-
     public void setNextHandler(Handler nextHandler) {
         this.nextHandler = nextHandler;
     }
+    
     //可以审批的金额
     public abstract int getLevel();
+    
+    //处理者名字
     public abstract String getnName();
 
 }

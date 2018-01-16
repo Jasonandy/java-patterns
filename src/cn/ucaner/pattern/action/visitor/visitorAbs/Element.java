@@ -13,7 +13,7 @@ package cn.ucaner.pattern.action.visitor.visitorAbs;
 /**
 * @Package：cn.ucaner.pattern.action.visitor.visitorAbs   
 * @ClassName：Element   
-* @Description：   <p> 访问者模式 -  具体元素 </p>
+* @Description：   <p> 访问者模式 -  具体元素   abstract </p>
 * @Author： - DaoDou 
 * @CreatTime：2017年10月26日 下午4:51:52   
 * @Modify By：   
@@ -27,6 +27,7 @@ public abstract class Element {
 	
     //定义访问逻辑
     public abstract void doVisite();
+    
     //定义谁能访问
     public abstract void accept(IVisitor iVisitor);
 }

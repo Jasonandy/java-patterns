@@ -33,6 +33,6 @@ public class FinanceHandler extends Handler {
 
     @Override
     public String getnName() {
-        return "李财务";
+        return "财务";
     }
 }

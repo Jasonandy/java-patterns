@@ -11,6 +11,7 @@
 package cn.ucaner.pattern.action.visitor.visitorAbs;
 
 import cn.ucaner.pattern.action.visitor.visitorIml.ConcreateElementAdmin;
+import cn.ucaner.pattern.action.visitor.visitorIml.ConcreateElementRoot;
 import cn.ucaner.pattern.action.visitor.visitorIml.ConcreateElementUser;
 
 /**
@@ -33,4 +34,7 @@ public interface IVisitor {
     
     //管理员
     public void visit(ConcreateElementAdmin admin);
+    
+    //Root管理员
+    public void visit(ConcreateElementRoot root);
 }
