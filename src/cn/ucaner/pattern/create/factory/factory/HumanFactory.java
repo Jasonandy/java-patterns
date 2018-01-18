@@ -26,7 +26,8 @@ import cn.ucaner.pattern.create.factory.Human;
  */
 public class HumanFactory extends AbsHumanFactory {
 	
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public <T extends Human> T createHumen(Class<T> tClass) {
         Human humen=null;
         try {

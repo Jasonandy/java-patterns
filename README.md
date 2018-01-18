@@ -65,6 +65,9 @@
 *
 *
 
+# 享元模式
+
+
 
 ###Emoj
 :smile: :dog: :sunny: :zap: :pig: :four_leaf_clover: :watermelon: :kissing_closed_eyes: :full_moon_with_face:

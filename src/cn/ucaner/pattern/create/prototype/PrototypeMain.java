@@ -34,7 +34,8 @@ public class PrototypeMain {
     *日期:2017/3/8/下午12:27
     *描述: 执行完可以看到 ShallowCopy 里面的arrayList一直是一个,没有变动过,所有在添加图片的时候,会再原有的基础上添加
     **/
-    private static void shallowCopy(){
+    @SuppressWarnings("unused")
+	private static void shallowCopy(){
         ShallowCopy shallow=new ShallowCopy();
         shallow.setMessage("先生,您好。您的充气娃娃已经收货");
         shallow.setSend("MirsFang");

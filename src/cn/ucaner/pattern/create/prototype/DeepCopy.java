@@ -26,7 +26,8 @@ import cn.ucaner.pattern.create.prototype.prototypeAbs.BaseMessage;
  */
 public class DeepCopy extends BaseMessage implements Cloneable {
 
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     protected Object clone() throws CloneNotSupportedException {
         DeepCopy deepCopy=null;
         try {
