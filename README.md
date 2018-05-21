@@ -1,4 +1,18 @@
-![](http://upload-images.jianshu.io/upload_images/7802425-9eb1bcd006e34aa6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+<p align=center>
+  <a href="https://github.com/Jasonandy/Java-Core-Advanced">
+    <img src="http://upload-images.jianshu.io/upload_images/7802425-9eb1bcd006e34aa6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Java-Core-Advanced" >
+  </a>
+</p>
+
+<p align=center>
+  You are what you want to be.
+</p>
+
+<p align="center">
+	<a href="#"><img src="https://img.shields.io/wercker/ci/wercker/docs.svg?style=for-the-badge" alt=""></a>
+	<a href="#"><img src="https://img.shields.io/badge/Author-Jason-orange.svg?style=for-the-badge" alt=""></a>
+</p>
+
 
 # Ucaner
 > You are what you want to be. - w.b
