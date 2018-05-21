@@ -21,7 +21,7 @@ import cn.ucaner.pattern.structure.decorator.decoratorIml.SuagrFouthGradeSchoolR
 * @Package：cn.ucaner.pattern.structure.decorator   
 * @ClassName：DecoratorMain   
 * @Description：   <p> 装饰器模式  -  装饰器模式运行类 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:15:16   
 * @Modify By：   
 * @ModifyTime：  

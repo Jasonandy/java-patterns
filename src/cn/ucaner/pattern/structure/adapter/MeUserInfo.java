@@ -16,7 +16,7 @@ import cn.ucaner.pattern.structure.adapter.adapterAbs.IUserInfo;
 * @Package：cn.ucaner.pattern.structure.adapter   
 * @ClassName：MeUserInfo   
 * @Description：   <p> 适配器模式  --- 我们自己的用户类</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午6:02:39   
 * @Modify By：   
 * @ModifyTime：  

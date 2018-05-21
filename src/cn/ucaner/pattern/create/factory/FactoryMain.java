@@ -19,7 +19,7 @@ import cn.ucaner.pattern.create.factory.human.YellowHuman;
 * @Package：cn.ucaner.pattern.create.factory   
 * @ClassName：FactoryMain   
 * @Description：   <p> 工厂模式  - 执行类</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:47:54   
 * @Modify By：   
 * @ModifyTime：  

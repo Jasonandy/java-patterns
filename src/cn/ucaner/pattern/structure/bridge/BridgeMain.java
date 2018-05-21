@@ -17,7 +17,7 @@ import cn.ucaner.pattern.structure.bridge.abs.Implementor;
 * @Package：cn.ucaner.pattern.structure.bridge   
 * @ClassName：BridgeMain   
 * @Description：   <p> 桥接模式  -- 执行类</p>
-* @Author： - DaoDou 
+* @Author： - 
 * @CreatTime：2017年10月26日 下午5:59:16   
 * @Modify By：   
 * @ModifyTime：  

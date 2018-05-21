@@ -17,7 +17,7 @@ import cn.ucaner.pattern.action.chainOfResponsibility.abs.Handler;
 * @ClassName：ManagerHandler   
 * @Description：   <p> 责任链模式
 *                    备注  你的上司,牛经理</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午1:41:26   
 * @Modify By：   
 * @ModifyTime：  

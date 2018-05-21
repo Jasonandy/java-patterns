@@ -16,7 +16,7 @@ import cn.ucaner.pattern.action.command.absCommand.Group;
 * @Package：cn.ucaner.pattern.action.command   
 * @ClassName：Product   
 * @Description：   <p> 命令模式 --- 产品经理</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:34:14   
 * @Modify By：   
 * @ModifyTime：  

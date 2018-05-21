@@ -16,7 +16,7 @@ import cn.ucaner.pattern.structure.bridge.abs.Implementor;
 * @Package：cn.ucaner.pattern.structure.bridge   
 * @ClassName：ConcreteImplementor   
 * @Description：   <p> 桥接模式  --  具体实现类</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:59:37   
 * @Modify By：   
 * @ModifyTime：  

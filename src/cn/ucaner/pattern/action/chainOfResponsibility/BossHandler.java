@@ -16,7 +16,7 @@ import cn.ucaner.pattern.action.chainOfResponsibility.abs.Handler;
 * @Package：cn.ucaner.pattern.action.chainOfResponsibility   
 * @ClassName：BossHandler   
 * @Description：   <p> 责任链模式 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午1:40:14   
 * @Modify By：   
 * @ModifyTime：  

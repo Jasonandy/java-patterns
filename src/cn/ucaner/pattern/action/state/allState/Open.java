@@ -17,7 +17,7 @@ import cn.ucaner.pattern.action.state.absState.State;
 * @Package：cn.ucaner.pattern.action.state.allState   
 * @ClassName：Open   
 * @Description：   <p> 状态模式  - 打开</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午4:56:20   
 * @Modify By：   
 * @ModifyTime：  

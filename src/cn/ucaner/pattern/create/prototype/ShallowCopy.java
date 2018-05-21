@@ -16,7 +16,7 @@ import cn.ucaner.pattern.create.prototype.prototypeAbs.BaseMessage;
 * @Package：cn.ucaner.pattern.create.prototype   
 * @ClassName：ShallowCopy   
 * @Description：   <p> 设计模式  原型模式     --- 浅拷贝的对象</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:42:16   
 * @Modify By：   
 * @ModifyTime：  

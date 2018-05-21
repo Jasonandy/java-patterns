@@ -17,7 +17,7 @@ import java.util.HashMap;
 * @Package：cn.ucaner.pattern.structure.adapter.adapterAbs   
 * @ClassName：IOtherInfo   
 * @Description：   <p> 适配器模式   - - 需要对接的用户接口类</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午6:03:38   
 * @Modify By：   
 * @ModifyTime：  

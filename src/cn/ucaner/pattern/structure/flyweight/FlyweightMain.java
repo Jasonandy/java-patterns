@@ -16,7 +16,7 @@ import cn.ucaner.pattern.structure.flyweight.flyweightAbs.Flyweight;
 * @Package：cn.ucaner.pattern.structure.flyweight   
 * @ClassName：FlyweightMain   
 * @Description：   <p> 享元模式  --- 享元模式执行类</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午6:09:45   
 * @Modify By：   
 * @ModifyTime：  

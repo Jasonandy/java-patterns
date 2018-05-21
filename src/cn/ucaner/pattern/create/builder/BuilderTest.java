@@ -14,7 +14,7 @@ package cn.ucaner.pattern.create.builder;
 * @Package：cn.ucaner.pattern.create.builder   
 * @ClassName：BuilderTest   
 * @Description：   <p> 测试类,生产一个金刚狼</p>
-* @Author： - DaoDou   
+* @Author： -    
 * @CreatTime：2018年1月16日 下午2:04:55   
 * @Modify By：   
 * @ModifyTime：  2018年1月16日

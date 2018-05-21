@@ -17,7 +17,7 @@ import cn.ucaner.pattern.structure.bridge.abs.Implementor;
 * @Package：cn.ucaner.pattern.structure.bridge   
 * @ClassName：RefinedAbstraction   
 * @Description：   <p> 桥接模式  --- 具体抽象化角色</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:58:08   
 * @Modify By：   
 * @ModifyTime：  

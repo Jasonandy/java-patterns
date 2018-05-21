@@ -16,7 +16,7 @@ import cn.ucaner.pattern.action.chainOfResponsibility.abs.Handler;
 * @Package：cn.ucaner.pattern.action.chainOfResponsibility   
 * @ClassName：ChainOfReponsibilityMain   
 * @Description：   <p> 责任链模式</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午1:40:32   
 * @Modify By：   
 * @ModifyTime：  

@@ -14,7 +14,7 @@ package cn.ucaner.pattern.structure.flyweight.flyweightAbs;
 * @Package：cn.ucaner.pattern.structure.flyweight.flyweightAbs   
 * @ClassName：Flyweight   
 * @Description：   <p> 享元模式  --- 抽象享元对象</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午6:11:06   
 * @Modify By：   
 * @ModifyTime：  

@@ -14,7 +14,7 @@ package cn.ucaner.pattern.action.chainOfResponsibility.abs;
 * @Package：cn.ucaner.pattern.action.chainOfResponsibility.abs   
 * @ClassName：Handler   
 * @Description：   <p> 责任链模式 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午1:39:52   
 * @Modify By：   
 * @ModifyTime：  

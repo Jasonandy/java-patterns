@@ -14,7 +14,7 @@ package cn.ucaner.pattern.structure.proxy.staticProxy;
 * @Package：cn.ucaner.pattern.structure.proxy.staticProxy   
 * @ClassName：RealSuject   
 * @Description：   <p> 代理模式真实类</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午1:47:02   
 * @Modify By：   
 * @ModifyTime：  

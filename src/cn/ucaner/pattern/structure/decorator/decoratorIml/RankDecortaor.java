@@ -17,7 +17,7 @@ import cn.ucaner.pattern.structure.decorator.decoratorAbs.SchoolReport;
 * @Package：cn.ucaner.pattern.structure.decorator.decoratorIml   
 * @ClassName：RankDecortaor   
 * @Description：   <p> 装饰器模式  -  装饰学校排名</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:21:15   
 * @Modify By：   
 * @ModifyTime：  

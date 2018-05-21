@@ -14,7 +14,7 @@ package cn.ucaner.pattern.create.builder;
 * @Package：cn.ucaner.pattern.create.builder   
 * @ClassName：XManBuilder   
 * @Description：   <p> XManBuilder</p>
-* @Author： - DaoDou   
+* @Author： -    
 * @CreatTime：2018年1月16日 下午2:06:06   
 * @Modify By：   
 * @ModifyTime：  2018年1月16日

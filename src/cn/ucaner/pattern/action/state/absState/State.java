@@ -14,7 +14,7 @@ package cn.ucaner.pattern.action.state.absState;
 * @Package：cn.ucaner.pattern.action.state.absState   
 * @ClassName：State   
 * @Description：   <p> 状态模式 -  抽象状态角色</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午4:55:13   
 * @Modify By：   
 * @ModifyTime：  

@@ -17,7 +17,7 @@ import cn.ucaner.pattern.action.chainOfResponsibility.abs.Handler;
 * @ClassName：FinanceHandler   
 * @Description：   <p>  *模式：责任链模式
 *                     备注  公司财务,李财务*</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午1:41:00   
 * @Modify By：   
 * @ModifyTime：  

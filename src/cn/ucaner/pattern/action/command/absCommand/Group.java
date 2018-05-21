@@ -14,7 +14,7 @@ package cn.ucaner.pattern.action.command.absCommand;
 * @Package：cn.ucaner.pattern.action.command.absCommand   
 * @ClassName：Group   
 * @Description：   <p>  命令模式 ---  抽象执行者</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:36:27   
 * @Modify By：   
 * @ModifyTime：  

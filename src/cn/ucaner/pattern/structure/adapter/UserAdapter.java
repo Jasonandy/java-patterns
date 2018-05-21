@@ -16,7 +16,7 @@ import cn.ucaner.pattern.structure.adapter.adapterAbs.IUserInfo;
 * @Package：cn.ucaner.pattern.structure.adapter   
 * @ClassName：UserAdapter   
 * @Description：   <p> 适配器模式  --- 两种不同用户之间的适配 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午6:01:54   
 * @Modify By：   
 * @ModifyTime：  

@@ -18,7 +18,7 @@ import cn.ucaner.pattern.structure.adapter.adapterAbs.IOtherInfo;
 * @Package：cn.ucaner.pattern.structure.adapter   
 * @ClassName：OtherUserInfo   
 * @Description：   <p> 适配器模式  --- 其他用户类的实现类</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午6:02:17   
 * @Modify By：   
 * @ModifyTime：  

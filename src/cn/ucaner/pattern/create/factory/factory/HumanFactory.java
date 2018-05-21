@@ -17,7 +17,7 @@ import cn.ucaner.pattern.create.factory.Human;
 * @Package：cn.ucaner.pattern.create.factory.factory   
 * @ClassName：HumanFactory   
 * @Description：   <p> 工厂模式   --- 具体工厂</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:46:37   
 * @Modify By：   
 * @ModifyTime：  

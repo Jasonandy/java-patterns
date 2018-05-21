@@ -16,7 +16,7 @@ import cn.ucaner.pattern.structure.decorator.decoratorAbs.SchoolReport;
 * @Package：cn.ucaner.pattern.structure.decorator.decoratorIml   
 * @ClassName：FouthGradeSchoolReport   
 * @Description：   <p> 装饰器模式  - - 四年级成绩单</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:17:57   
 * @Modify By：   
 * @ModifyTime：  

@@ -18,7 +18,7 @@ import cn.ucaner.pattern.action.visitor.visitorIml.Visitor;
 * @Package：cn.ucaner.pattern.action.visitor   
 * @ClassName：VisitorMain   
 * @Description：   <p> 访问者模式 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午4:49:10   
 * @Modify By：   
 * @ModifyTime：  

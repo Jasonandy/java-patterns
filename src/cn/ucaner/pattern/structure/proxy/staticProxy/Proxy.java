@@ -16,7 +16,7 @@ import cn.ucaner.pattern.structure.decorator.decoratorAbs.Decorator;
 * @Package：cn.ucaner.pattern.structure.proxy.staticProxy   
 * @ClassName：Proxy   
 * @Description：   <p> 代理模式 代理模式代理类,他和装饰器模式的实现有点相近{@link Decorator}</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午1:47:45   
 * @Modify By：   
 * @ModifyTime：  

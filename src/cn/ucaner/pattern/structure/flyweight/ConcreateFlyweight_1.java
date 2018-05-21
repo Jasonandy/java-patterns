@@ -20,7 +20,7 @@ import cn.ucaner.pattern.structure.flyweight.flyweightAbs.Flyweight;
 * @Package：cn.ucaner.pattern.structure.flyweight   
 * @ClassName：ConcreateFlyweight_1   
 * @Description：   <p> 享元模式 -- 具体享元对象</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午6:10:48   
 * @Modify By：   
 * @ModifyTime：  

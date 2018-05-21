@@ -14,7 +14,7 @@ package cn.ucaner.pattern.structure.proxy.staticProxy;
 * @Package：cn.ucaner.pattern.structure.proxy.staticProxy   
 * @ClassName：Subject   
 * @Description：   <p> static Proxy 代理模式接口类 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午1:46:44   
 * @Modify By：   
 * @ModifyTime：  

@@ -14,7 +14,7 @@ package cn.ucaner.pattern.structure.bridge.abs;
 * @Package：cn.ucaner.pattern.structure.bridge.abs   
 * @ClassName：Abstraction   
 * @Description：   <p> 桥接模式 --- 抽象化角色</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:58:30   
 * @Modify By：   
 * @ModifyTime：  

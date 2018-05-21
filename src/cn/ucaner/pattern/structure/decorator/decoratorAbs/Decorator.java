@@ -15,7 +15,7 @@ package cn.ucaner.pattern.structure.decorator.decoratorAbs;
 * @ClassName：Decorator   
 * @Description：   <p> 装饰器模式  - 
 * 抽象装饰器 这种方式看起来和静态代理模式很像 {@link structure.proxy.staticProxy.Proxy }</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:16:35   
 * @Modify By：   
 * @ModifyTime：  

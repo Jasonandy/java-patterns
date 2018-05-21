@@ -19,7 +19,7 @@ import cn.ucaner.pattern.action.visitor.visitorAbs.IVisitor;
 * @Package：cn.ucaner.pattern.action.visitor.visitorIml   
 * @ClassName：ConcreateElementRoot   
 * @Description：   <p> Root 管理员</p>
-* @Author： - DaoDou   
+* @Author： -    
 * @CreatTime：2018年1月16日 上午11:47:40   
 * @Modify By：   
 * @ModifyTime：  2018年1月16日

@@ -16,7 +16,7 @@ import cn.ucaner.pattern.action.observer.observerAbs.Observer;
 * @Package：cn.ucaner.pattern.action.observer.observerIml   
 * @ClassName：DiaoSi   
 * @Description：   <p> 观察者模式  ---  屌丝</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:28:58   
 * @Modify By：   
 * @ModifyTime：  

@@ -14,7 +14,7 @@ package cn.ucaner.pattern.create.factory;
 * @Package：cn.ucaner.pattern.create.factory   
 * @ClassName：AbsHumanFactory   
 * @Description：   <p> 工厂模式 --- 抽象出来的工厂</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:50:00   
 * @Modify By：   
 * @ModifyTime：  

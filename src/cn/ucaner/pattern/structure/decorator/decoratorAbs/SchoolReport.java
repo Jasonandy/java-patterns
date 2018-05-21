@@ -14,7 +14,7 @@ package cn.ucaner.pattern.structure.decorator.decoratorAbs;
 * @Package：cn.ucaner.pattern.structure.decorator.decoratorAbs   
 * @ClassName：SchoolReport   
 * @Description：   <p> 装饰器模式  -  成绩单抽象类</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:17:14   
 * @Modify By：   
 * @ModifyTime：  

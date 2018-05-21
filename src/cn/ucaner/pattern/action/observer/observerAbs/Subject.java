@@ -14,7 +14,7 @@ package cn.ucaner.pattern.action.observer.observerAbs;
 * @Package：cn.ucaner.pattern.action.observer.observerAbs   
 * @ClassName：Subject   
 * @Description：   <p> 观察者模式  -- 抽像女神(被观察者)</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:30:06   
 * @Modify By：   
 * @ModifyTime：  

@@ -19,7 +19,7 @@ import cn.ucaner.pattern.action.state.allState.Stop;
 * @Package：cn.ucaner.pattern.action.state.absState   
 * @ClassName：Context   
 * @Description：   <p> 状态模式   -  上下文 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午4:54:51   
 * @Modify By：   
 * @ModifyTime：  

@@ -17,7 +17,7 @@ import cn.ucaner.pattern.structure.decorator.decoratorAbs.SchoolReport;
 * @Package：cn.ucaner.pattern.structure.decorator.decoratorIml   
 * @ClassName：GoodBoyDecortaor   
 * @Description：   <p> 装饰器模式  - - 装饰在学校的表现</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:20:40   
 * @Modify By：   
 * @ModifyTime：  

@@ -14,7 +14,7 @@ package cn.ucaner.pattern.create.builder;
 * @Package：cn.ucaner.pattern.create.builder   
 * @ClassName：WolverineDirector   
 * @Description：   <p> 控制builder生产金刚狼</p>
-* @Author： - DaoDou   
+* @Author： -    
 * @CreatTime：2018年1月16日 下午2:05:17   
 * @Modify By：   
 * @ModifyTime：  2018年1月16日

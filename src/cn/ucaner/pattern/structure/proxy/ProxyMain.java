@@ -20,7 +20,7 @@ import cn.ucaner.pattern.structure.proxy.staticProxy.RealSuject;
 * @Package：cn.ucaner.pattern.structure.proxy   
 * @ClassName：ProxyMain   
 * @Description：   <p> 代理模式运行类</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午1:45:08   
 * @Modify By：   
 * @ModifyTime：  

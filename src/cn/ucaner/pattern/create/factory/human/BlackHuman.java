@@ -16,7 +16,7 @@ import cn.ucaner.pattern.create.factory.Human;
 * @Package：cn.ucaner.pattern.create.factory.human   
 * @ClassName：BlackHuman   
 * @Description：   <p> 工厂模式   -- 黑人 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:48:45   
 * @Modify By：   
 * @ModifyTime：  

@@ -20,7 +20,7 @@ import java.lang.reflect.Proxy;
 * @Description：   <p> 动态代理模式 --
 *  利用java.lang.reflect.Proxy类和java.lang.reflect.InvocationHandler接口定义代理类的实现
 * </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:04:37   
 * @Modify By：   
 * @ModifyTime：  

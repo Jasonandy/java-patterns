@@ -16,7 +16,7 @@ import cn.ucaner.pattern.action.command.absCommand.Command;
 * @Package：cn.ucaner.pattern.action.command.command   
 * @ClassName：AddPageCommand   
 * @Description：   <p> 命令模式  --  新增一个页面</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:36:00   
 * @Modify By：   
 * @ModifyTime：  

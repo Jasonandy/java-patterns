@@ -17,7 +17,7 @@ import cn.ucaner.pattern.action.visitor.visitorAbs.IVisitor;
 * @Package：cn.ucaner.pattern.action.visitor.visitorIml   
 * @ClassName：ConcreateElementAdmin   
 * @Description：   <p> 访问者模式    具体元素--管理员 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午4:51:01   
 * @Modify By：   
 * @ModifyTime：  

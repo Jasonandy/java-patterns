@@ -18,7 +18,7 @@ import cn.ucaner.pattern.action.observer.observerIml.NvShen;
 * @Package：cn.ucaner.pattern.action.observer   
 * @ClassName：ObserverMain   
 * @Description：   <p> 观察者模式   - 观察者模式运行类 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:26:58   
 * @Modify By：   
 * @ModifyTime：  

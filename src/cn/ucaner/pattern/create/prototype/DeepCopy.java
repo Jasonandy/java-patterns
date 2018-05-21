@@ -17,7 +17,7 @@ import cn.ucaner.pattern.create.prototype.prototypeAbs.BaseMessage;
 * @Package：cn.ucaner.pattern.create.prototype   
 * @ClassName：DeepCopy   
 * @Description：   <p> 原型模式  ---  原型模式深拷贝</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:43:23   
 * @Modify By：   
 * @ModifyTime：  

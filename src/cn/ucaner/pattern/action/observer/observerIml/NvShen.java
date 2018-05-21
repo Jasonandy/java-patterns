@@ -21,7 +21,7 @@ import cn.ucaner.pattern.action.observer.observerAbs.Subject;
 * @Package：cn.ucaner.pattern.action.observer.observerIml   
 * @ClassName：NvShen   
 * @Description：   <p> 观察者模式  --- 女神</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:28:12   
 * @Modify By：   
 * @ModifyTime：  

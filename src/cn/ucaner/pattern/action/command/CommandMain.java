@@ -16,7 +16,7 @@ import cn.ucaner.pattern.action.command.command.AddPageCommand;
 * @Package：cn.ucaner.pattern.action.command   
 * @ClassName：CommandMain   
 * @Description：   <p> 命令模式 -- 执行类 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:34:55   
 * @Modify By：   
 * @ModifyTime：  

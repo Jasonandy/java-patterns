@@ -14,7 +14,7 @@ package cn.ucaner.pattern.structure.decorator.decoratorIml;
 * @Package：cn.ucaner.pattern.structure.decorator.decoratorIml   
 * @ClassName：SuagrFouthGradeSchoolReport   
 * @Description：   <p> 装饰器模式 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:21:41   
 * @Modify By：   
 * @ModifyTime：  

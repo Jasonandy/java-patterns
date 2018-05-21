@@ -16,7 +16,7 @@ import cn.ucaner.pattern.action.command.absCommand.Group;
 * @Package：cn.ucaner.pattern.action.command   
 * @ClassName：UI   
 * @Description：   <p> 命令模式    --- UI妹子</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:33:50   
 * @Modify By：   
 * @ModifyTime：  

@@ -16,7 +16,7 @@ import cn.ucaner.pattern.action.visitor.visitorAbs.IVisitor;
 * @Package：cn.ucaner.pattern.action.visitor.visitorIml   
 * @ClassName：Visitor   
 * @Description：   <p> 访问者模式  具体的访问者</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午4:49:26   
 * @Modify By：   
 * @ModifyTime：  

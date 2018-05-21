@@ -14,7 +14,7 @@ package cn.ucaner.pattern.create.prototype;
 * @Package：cn.ucaner.pattern.create.prototype   
 * @ClassName：PrototypeMain   
 * @Description：   <p> 原型模式  --- 原型模式执行类</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:42:54   
 * @Modify By：   
 * @ModifyTime：  

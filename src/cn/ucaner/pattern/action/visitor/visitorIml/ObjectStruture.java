@@ -18,7 +18,7 @@ import cn.ucaner.pattern.action.visitor.visitorAbs.Element;
 * @Package：cn.ucaner.pattern.action.visitor.visitorIml   
 * @ClassName：ObjectStruture   
 * @Description：   <p> 访问者模式   结构对象,获取一个Element,现实中的数据源 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午4:49:51   
 * @Modify By：   
 * @ModifyTime：  

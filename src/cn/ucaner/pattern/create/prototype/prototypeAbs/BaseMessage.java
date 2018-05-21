@@ -16,7 +16,7 @@ import java.util.ArrayList;
 * @Package：cn.ucaner.pattern.create.prototype.prototypeAbs   
 * @ClassName：BaseMessage   
 * @Description：   <p>BaseMessage </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:43:48   
 * @Modify By：   
 * @ModifyTime：  

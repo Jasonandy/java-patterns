@@ -14,7 +14,7 @@ package cn.ucaner.pattern.structure.adapter.adapterAbs;
 * @Package：cn.ucaner.pattern.structure.adapter.adapterAbs   
 * @ClassName：IUserInfo   
 * @Description：   <p> 适配器模式 - -抽象用户类 </p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午6:03:19   
 * @Modify By：   
 * @ModifyTime：  
@@ -22,8 +22,8 @@ package cn.ucaner.pattern.structure.adapter.adapterAbs;
 * @version    V1.0
  */
 public interface IUserInfo {
-    //看名字就知道是啥。。这里就不写了
-    String getUserName();
+
+	String getUserName();
     String getHomeAddress();
     String getMobileNumber();
     String getSex();

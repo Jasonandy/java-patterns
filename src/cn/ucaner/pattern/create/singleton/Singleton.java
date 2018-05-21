@@ -14,7 +14,7 @@ package cn.ucaner.pattern.create.singleton;
 * @Package：cn.ucaner.pattern.create.singleton   
 * @ClassName：Singleton   
 * @Description：   <p> 双重锁的单例   单例模式</p>
-* @Author： - DaoDou 
+* @Author： -  
 * @CreatTime：2017年10月26日 下午5:38:56   
 * @Modify By：   
 * @ModifyTime：  
