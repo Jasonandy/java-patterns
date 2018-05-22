@@ -27,6 +27,8 @@ public class WolverineDirector {
         return wolverineBuilder
                 .buildXFactor()
                 .buildLover()
+                .buildName()
+                .buildAge()
                 .buildXman();
     }
 }

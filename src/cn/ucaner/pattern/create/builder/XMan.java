@@ -23,11 +23,33 @@ package cn.ucaner.pattern.create.builder;
  */
 public class XMan {
 	
+	private String name;
+	 
+	private Integer age;
+	
     private String xFactor;
     
     private String lover;
 
-    public String getxFactor() {
+	public String getName() {
+		return name;
+	}
+
+	public XMan setName(String name) {
+		this.name = name;
+		return this;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public XMan setAge(Integer age) {
+		this.age = age;
+		return this;
+	}
+
+	public String getxFactor() {
         return xFactor;
     }
 

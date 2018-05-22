@@ -27,5 +27,9 @@ public interface XManBuilder {
     
     XManBuilder buildLover();
     
+    XManBuilder buildName();
+    
+    XManBuilder buildAge();
+    
     XMan buildXman();
 }
