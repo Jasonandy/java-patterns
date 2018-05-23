@@ -12,6 +12,7 @@ package cn.ucaner.pattern.action.observer;
 
 import cn.ucaner.pattern.action.observer.observerAbs.Subject;
 import cn.ucaner.pattern.action.observer.observerIml.DiaoSi;
+import cn.ucaner.pattern.action.observer.observerIml.GaoFuShuai;
 import cn.ucaner.pattern.action.observer.observerIml.NvShen;
 
 /**
@@ -27,25 +28,40 @@ import cn.ucaner.pattern.action.observer.observerIml.NvShen;
  */
 public class ObserverMain {
 
+	/**
+	 * @Description: Test 
+	 * @Autor: Jason - Jasonandy@hotmail.com
+	 */
     public static void main(String[] args) {
-        //实例化一个女神。(现实中也能这么New就好了  for(;;) new Nvshen();  哈哈)
+    	
         NvShen nvShen=new NvShen();
-        //添加尾随大军
+        
+        /**
+         * 添加观察者
+         */
         getObservers(nvShen);
+        
+        
         //女神要出去逛街了!!!
         nvShen.goShopping();
-        
 
     }
 
-    //添加10个观察者(真变态)
+    /**
+     * 添加观察者
+     */
     public static void getObservers(Subject nvShen){
-        for (int i = 0; i < 100 ; i++) {
-            DiaoSi diaosi=new DiaoSi("屌丝"+i);
-            nvShen.Attach(diaosi);//添加
+        for (int i = 0; i < 10 ; i++) {
+        	String remark = String.format("有车 : %s ,有房: %s ,有学历: %s", "BBQ","BeiJing","常春藤");
+        	GaoFuShuai gaoFuShuai = new GaoFuShuai("GFS"+i, (long)(i^(i+88)),remark );
+            DiaoSi diaosi=new DiaoSi("DiaoSi"+i);
+            nvShen.Attach(diaosi);
             if (i%2!=0) {
-            	 //添加一个观察者
-                nvShen.Detach(diaosi);//删除 
+            	nvShen.Attach(gaoFuShuai);//添加高富帅
+                nvShen.Detach(diaosi);
+                /*if (i%3==0) {
+                	nvShen.Detach(gaoFuShuai);//剔除高富帅
+				}*/
 			}
            
         }

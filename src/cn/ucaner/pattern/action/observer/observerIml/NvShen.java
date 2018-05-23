@@ -40,15 +40,23 @@ public class NvShen implements Subject{
         Notify();
     }
 
+    
+    /**
+     * 添加观察者
+     */
     @Override
     public void Attach(Observer observer) {
         if(observersList==null){
-            observersList=new ArrayList<>();
+            observersList=new ArrayList<Observer>();
         }else {
             observersList.add(observer);
         }
     }
 
+    
+    /**
+     * 删除观察者
+     */
     @Override
     public void Detach(Observer observer) {
         String name=((DiaoSi)observer).getName();
@@ -56,18 +64,23 @@ public class NvShen implements Subject{
             return;
         }
        if( observersList.remove(observer)){
-           System.out.println(name+"已经被踢出队伍");
+           System.out.println("Sorry , 条件不满足 - "+name+"已经被踢出队伍.");
        }
     }
 
+    
+    /**
+     * 通知所有观察者
+     */
     @Override
     public void Notify() {
+    	//observersList 观察者List
         for (Observer observer:observersList) {
             //通知所有的跟随人员
             observer.Update();
             observer.Say();
         }
-        System.out.print("尾随大军已经出动!!!");
+        System.out.print("追求者已全部出动!");
     }
 
 }

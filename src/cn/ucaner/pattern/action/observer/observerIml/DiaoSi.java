@@ -25,7 +25,6 @@ import cn.ucaner.pattern.action.observer.observerAbs.Observer;
  */
 public class DiaoSi  implements Observer{
    
-	//你的名字
     private String name;
 
     public String getName() {

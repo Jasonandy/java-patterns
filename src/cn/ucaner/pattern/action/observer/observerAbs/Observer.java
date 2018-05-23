@@ -13,7 +13,12 @@ package cn.ucaner.pattern.action.observer.observerAbs;
 /**
 * @Package：cn.ucaner.pattern.action.observer.observerAbs   
 * @ClassName：Observer   
-* @Description：   <p> 观察者模式  -- you </p>
+* @Description：   <p> 观察者模式  -- you 
+* 
+* 观察者Observer
+* 
+* For  Study Listener
+* </p>
 * @Author： -  
 * @CreatTime：2017年10月26日 下午5:29:32   
 * @Modify By：   
@@ -23,8 +28,17 @@ package cn.ucaner.pattern.action.observer.observerAbs;
  */
 public interface Observer {
 	
+	/**
+	 * @Description: Update
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
     public  void  Update();
     
+    
+    /**
+     * @Description: Say
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
     public  void  Say();
     
 }
