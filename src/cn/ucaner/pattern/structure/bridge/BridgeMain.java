@@ -29,10 +29,12 @@ public class BridgeMain {
 
     public static void main(String[] args) {
         //实现化角色
-        Implementor implementor=new ConcreteImplementor();
+        Implementor implementor = new ConcreteImplementor();
         //抽象化角色
-        RefinedAbstraction refinedAbstraction=new RefinedAbstraction(implementor);
+        RefinedAbstraction refinedAbstraction = new RefinedAbstraction(implementor);
         //抽象化角色搞事情
         refinedAbstraction.doSomethings();
+        implementor.doSomethingA();
+        implementor.doSomethingB();
     }
 }
