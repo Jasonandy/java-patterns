@@ -15,7 +15,7 @@ import cn.ucaner.pattern.structure.adapter.adapterAbs.IUserInfo;
 /**
 * @Package：cn.ucaner.pattern.structure.adapter   
 * @ClassName：UserAdapter   
-* @Description：   <p> 适配器模式  --- 两种不同用户之间的适配 </p>
+* @Description：   <p> 适配器模式  --- 两种不同用户之间的适配    Other 适配 User</p>
 * @Author： -  
 * @CreatTime：2017年10月26日 下午6:01:54   
 * @Modify By：   
@@ -54,4 +54,12 @@ public class UserAdapter extends OtherUserInfo implements IUserInfo{
         System.out.println(getUserJobInfo().get("jobaddress"));
         return null;
     }
+
+	@Override
+	public String toString() {
+		return "UserAdapter [getUserName()=" + getUserName() + ", getHomeAddress()=" + getHomeAddress()
+				+ ", getMobileNumber()=" + getMobileNumber() + ", getSex()=" + getSex() + ", getJobPosition()="
+				+ getJobPosition() + "]";
+	}
+    
 }

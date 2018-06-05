@@ -43,4 +43,11 @@ public class OtherUserInfo implements IOtherInfo {
         hashMap.put("jobaddress","员工公司地址");
         return hashMap;
     }
+
+	@Override
+	public String toString() {
+		return "OtherUserInfo [getUserInfo()=" + getUserInfo() + ", getUserJobInfo()=" + getUserJobInfo() + "]";
+	}
+    
+    
 }

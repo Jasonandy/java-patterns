@@ -54,4 +54,13 @@ public class MeUserInfo implements IUserInfo {
         System.out.print("员工公司地址");
         return null;
     }
+
+	@Override
+	public String toString() {
+		return "MeUserInfo [getUserName()=" + getUserName() + ", getHomeAddress()=" + getHomeAddress()
+				+ ", getMobileNumber()=" + getMobileNumber() + ", getSex()=" + getSex() + ", getJobPosition()="
+				+ getJobPosition() + "]";
+	}
+    
+    
 }

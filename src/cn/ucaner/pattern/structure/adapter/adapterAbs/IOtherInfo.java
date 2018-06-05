@@ -26,7 +26,17 @@ import java.util.HashMap;
  */
 public interface IOtherInfo {
 	
+	/**
+	 * @Description: 获取用户的User信息
+	 * @return HashMap<String,String>
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
     HashMap<String,String> getUserInfo();
     
+    /**
+     * @Description: 获取的是用户的job信息
+     * @return HashMap<String,String>
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
     HashMap<String,String> getUserJobInfo();
 }

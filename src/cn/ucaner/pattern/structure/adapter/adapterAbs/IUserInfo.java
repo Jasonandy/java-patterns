@@ -23,9 +23,15 @@ package cn.ucaner.pattern.structure.adapter.adapterAbs;
  */
 public interface IUserInfo {
 
+	//user信息
 	String getUserName();
     String getHomeAddress();
     String getMobileNumber();
     String getSex();
+    
+    //job信息
     String getJobPosition();
+    
+    
+    
 }

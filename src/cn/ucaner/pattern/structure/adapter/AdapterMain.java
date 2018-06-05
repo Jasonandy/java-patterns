@@ -26,11 +26,21 @@ import cn.ucaner.pattern.structure.adapter.adapterAbs.IUserInfo;
 public class AdapterMain {
 	
     public static void main(String[] args) {
-        //得到一个其他的用户类型
+       
+    	/**
+    	 * 接口是iuserInfo  实例拿的是 OtherUserInfo
+    	 */
         IUserInfo iUserInfo=new UserAdapter();
         iUserInfo.getHomeAddress();
-        //得到一个自己的用户类
-        IUserInfo iUserInfoMy=new MeUserInfo();
-        iUserInfoMy.getHomeAddress();
+        System.out.println(iUserInfo.toString());
+        
+        /**
+         * iuserInfo  实例也是 UserInfo 
+         */
+        IUserInfo iUserInfoMe=new MeUserInfo();
+        iUserInfoMe.getHomeAddress();
+        System.out.println(iUserInfoMe.toString());
+        
+        
     }
 }
