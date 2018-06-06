@@ -25,14 +25,29 @@ import cn.ucaner.pattern.action.chainOfResponsibility.abs.Handler;
 * @version    V1.0
  */
 public class ManagerHandler extends Handler {
+	
+	private int moneny;
 
-    @Override
+	@Override
     public int getLevel() {
-        return 1;
+        return this.moneny;
     }
 
     @Override
     public String getnName() {
-        return "经理";
+        return "Manager";
     }
+    
+	public ManagerHandler(int moneny) {
+		super();
+		this.moneny = moneny;
+	}
+
+	public int getMoneny() {
+		return moneny;
+	}
+
+	public void setMoneny(int moneny) {
+		this.moneny = moneny;
+	}
 }

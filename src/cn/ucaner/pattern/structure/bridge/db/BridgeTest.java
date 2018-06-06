@@ -28,6 +28,7 @@ public class BridgeTest {
 	public static void main(String[] args) {
 		
 		 Bridge mysqlBridge = new MyBridge();
+		 
 		 Driver mysqlDriver = new Mysql();  
 	     mysqlBridge.setDriver(mysqlDriver);  
 	     mysqlBridge.connect();  

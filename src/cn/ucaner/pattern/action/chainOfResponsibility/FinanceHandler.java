@@ -25,14 +25,31 @@ import cn.ucaner.pattern.action.chainOfResponsibility.abs.Handler;
 * @version    V1.0
  */
 public class FinanceHandler extends Handler {
+	
+	private int moneny;
 
     @Override
     public int getLevel() {
-        return 2;
+        return this.moneny;
     }
 
     @Override
     public String getnName() {
-        return "财务";
+        return "Financer";
     }
+
+	public int getMoneny() {
+		return moneny;
+	}
+	public void setMoneny(int moneny) {
+		this.moneny = moneny;
+	}
+
+	public FinanceHandler(int moneny) {
+		super();
+		this.moneny = moneny;
+	}
+    
+	
+    
 }
