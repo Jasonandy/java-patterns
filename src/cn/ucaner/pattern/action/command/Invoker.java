@@ -31,11 +31,7 @@ public class Invoker   {
         this.command = command;
     }
 
-    public void setCommand(String str) {
-
-    }
-
-    public  void Action() {
+    public  void Call() {
         this.command.execute();
     }
 }

@@ -10,8 +10,11 @@
  */
 package cn.ucaner.pattern.action.command.absCommand;
 
+import java.util.List;
+
 import cn.ucaner.pattern.action.command.Code;
 import cn.ucaner.pattern.action.command.Product;
+import cn.ucaner.pattern.action.command.Projecter;
 import cn.ucaner.pattern.action.command.UI;
 
 /**
@@ -27,11 +30,41 @@ import cn.ucaner.pattern.action.command.UI;
  */
 public abstract class Command {
 	
-    protected Product product=new Product();
+	/**
+	 * 项目经理
+	 */
+	protected Projecter pm = new Projecter();
+	
+	/**
+	 * 产品经理
+	 */
+    protected Product product = new Product();
     
-    protected UI ui=new UI();
+    /**
+     * UI
+     */
+    protected UI ui = new UI();
     
+    /**
+     * 码农实现
+     */
     protected Code code =new Code();
-    //执行
+    
+    
+/*    private List<Group> gps;
+    
+	public List<Group> getGps() {
+		return gps;
+	}
+
+	public void setGps(List<Group> gps) {
+		this.gps = gps;
+	}*/
+
+
+	/**
+     * @Description: execute
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
     public abstract void execute();
 }

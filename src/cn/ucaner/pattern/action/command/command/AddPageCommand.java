@@ -27,14 +27,20 @@ public class AddPageCommand extends Command {
 	
     @Override
     public void execute() {
-        product.getCommand();
-        ui.getCommand();
-        code.getCommand();
-        product.doAdd();
-        product.plan();
-        ui.doAdd();
-        ui.plan();
-        code.doAdd();
-        code.plan();
+    	//项目经理
+    	super.pm.getCommand();
+        product.getCommand();//产品经理
+        ui.getCommand();//ui
+        code.getCommand();//码农
+        pm.doAdd();
+        product.doAdd();//添加
+        pm.plan();
+        product.plan();//执行
+        ui.doAdd();//添加
+        ui.plan();//执行
+        code.doAdd();//添加
+        code.plan();//执行
+        product.acceptance();
+        pm.acceptance();
     }
 }

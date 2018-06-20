@@ -45,4 +45,8 @@ public class Product extends Group {
     public void plan() {
         System.out.println("产品变更完毕");
     }
+    
+    public void acceptance() {
+    	System.out.println("产品经理验收");
+    }
 }

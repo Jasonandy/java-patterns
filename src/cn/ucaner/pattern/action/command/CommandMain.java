@@ -25,10 +25,14 @@ import cn.ucaner.pattern.action.command.command.AddPageCommand;
  */
 public class CommandMain {
 
+	/**
+	 * @Description: Just for test
+	 * @Autor: Jason- jasonandy@hotmail.com
+	 */
     public static void main(String[] args) {
         Invoker invoker=new Invoker();
         invoker.setCommand(new AddPageCommand());
-        invoker.Action();
+        invoker.Call();
     }
 
 }

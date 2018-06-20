@@ -22,13 +22,29 @@ package cn.ucaner.pattern.action.command.absCommand;
 * @version    V1.0
  */
 public abstract class Group {
-    //得到命令
-   public abstract void getCommand();
-    //新增一个功能
+	
+	/**
+	 * @Description: 得到命令
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
+	public abstract void getCommand();
+	
+	/**
+	 * @Description: 新增一个功能
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
     public abstract void doAdd();
-    //减去一个功能
+    
+    /**
+     * @Description: 减去一个功能
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
     public abstract  void doDel();
-    //开始实施
+    
+    /**
+     * @Description: 开始实施
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
     public abstract void plan();
 
 }
