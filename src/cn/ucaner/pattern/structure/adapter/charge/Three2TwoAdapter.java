@@ -27,17 +27,23 @@ import cn.ucaner.pattern.structure.adapter.charge.inf.TwoInterface;
 public class Three2TwoAdapter implements ThreeInterface{
 
 	/**
-	 * 2口充电头
+	 * 2口充电头 - 适配器
 	 */
 	TwoInterface twoInterface;
 	
-	
+	/**
+	 * 3口 转两口的插座 - 适配
+	 * @param twoInterface
+	 */
 	public Three2TwoAdapter(TwoInterface twoInterface) {
 		super();
 		this.twoInterface = twoInterface;
 	}
 
 
+	/**
+	 * 三口的适配器 适用的是俩孔的插座
+	 */
 	@Override
 	public void OfferPowerForThree() {
 		 twoInterface.OfferPowerForTwo();

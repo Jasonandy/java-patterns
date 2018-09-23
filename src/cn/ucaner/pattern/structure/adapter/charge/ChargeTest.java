@@ -29,7 +29,7 @@ public class ChargeTest {
 	/**
 	 * 
 	 * @Description: Just for test 
-	 * @param args void
+	 * @param args 
 	 * @Autor: Jason - jasonandy@hotmail.com
 	 */
 	public static void main(String[] args) {
@@ -37,6 +37,12 @@ public class ChargeTest {
 		TwoInterface twoInterface = new ChinaCharge();//2口
 		
 		ThreeInterface threeInterface = new Three2TwoAdapter(twoInterface);
+		
+		ThreeInterface threeInterface2 = new HongKongCharge();
+		
+		Three3TwoAdapter three3TwoAdapter = new Three3TwoAdapter(threeInterface2);
+		
+		three3TwoAdapter.OfferPowerForTwo();
 		
 		threeInterface.OfferPowerForThree();
 	}

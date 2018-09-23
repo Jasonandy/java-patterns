@@ -6,6 +6,7 @@
  *  <p> Created on 19941115</p>
  *  <p> Created by Jason</p>
  *  </body>
+ *  s
  * </html>
  */
 package cn.ucaner.pattern.structure.adapter.charge.inf;
@@ -25,9 +26,9 @@ package cn.ucaner.pattern.structure.adapter.charge.inf;
 public interface TwoInterface {
 	
 	/**
-	 * 
-	 * @Description: 两口
-	 * @Autor: Jason - jasonandy@hotmail.com
+	* @Description: 两口的插座
+	* @CreatTime: 2018年9月23日
+	* @Autor: Jason - jasonandy@hotmail.com
 	 */
 	 public void OfferPowerForTwo();
 

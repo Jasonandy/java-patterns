@@ -25,8 +25,9 @@ package cn.ucaner.pattern.structure.adapter.charge.inf;
 public interface ThreeInterface {
 	
 	/**
-	 * @Description: 三个口的插头有 一 个 功能，能够为三个触角的插头提供电源
-	 * @Autor: jasonandy@hotmail.com
+	 * @Description:三个口的插头有 一 个 功能，能够为三个触角的插头提供电源
+	 * @CreatTime: 2018年9月23日
+	 * @Autor: Jason - jasonandy@hotmail.com
 	 */
 	public void OfferPowerForThree();
 	

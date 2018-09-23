@@ -25,11 +25,12 @@ import cn.ucaner.pattern.structure.adapter.charge.inf.TwoInterface;
 */
 public class ChinaCharge implements TwoInterface{
 
+	/**
+	 * OfferPowerForTwo 标准的两口插座
+	 */
 	@Override
 	public void OfferPowerForTwo() {
-		System.out.println("I'm China Charge. 220V.");
+		System.out.println("I'm China Charge. 220V.  - 中国的标准的220V 50HZ 电源.");
 	}
-	
-	
 
 }
