@@ -184,16 +184,319 @@ public class FactoryMain {
 ```
 
 # 单例模式
-*
-*
+* Singleton的静态属性instance中，只有instance为null的时候才创建一个实例，构造函数私有，确保每次都只创建一个，避免重复创建
+
+```java
+/**
+ * <html>
+ * <body>
+ *  <P> Copyright 1994 JsonInternational</p>
+ *  <p> All rights reserved.</p>
+ *  <p> Created on 19941115</p>
+ *  <p> Created by Jason</p>
+ *  </body>
+ * </html>
+ */
+package cn.ucaner.pattern.create.singleton;
+
+/**
+* @Package：cn.ucaner.pattern.create.singleton   
+* @ClassName：Singleton   
+* @Description：   <p> 双重锁的单例   单例模式</p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午5:38:56   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public class Singleton {
+	
+	/**
+	 * 防止外部创建实例 私有 
+	 * Singleton.
+	 */
+    private Singleton() {
+
+    }
+    
+    /**
+     * 唯一实例 
+     * 内存可见性：通俗来说就是，线程A对一个volatile变量的修改，对于其它线程来说是可见的，即线程每次获取volatile变量的值都是最新的。
+     * https://www.cnblogs.com/chengxiao/p/6528109.html
+     */
+    private static volatile Singleton mInstance;
+
+    public static Singleton getInstance() {
+        
+        if (mInstance == null) {//第一个锁，如果没有实例
+        	
+        	/**
+        	 * 第二个锁，如果没有任何线程创建Singleton实例  对象锁 - 若多个线程拥有同一个MyObject类的对象，则这些方法只能以同步的方式执行
+        	 * https://www.cnblogs.com/hapjin/p/5452663.html
+        	 */
+            synchronized (Singleton.class) { 
+                if (mInstance == null) {
+                    mInstance = new Singleton();
+                }
+            }
+        }
+        return mInstance;
+    }
+    
+    public static void main(String[] args) {
+		System.out.println(mInstance);
+	}
+}
+
+```
 
 # 建造者模式
-*
-*
+* 建造者模式，顾名思义的就是类似建房子，有一个固定的流程。在大话设计模式中，作者举了一个例子大概意思是同一道菜在中国的每一个地方都有不同的味道（LZ印象最深的是鱼香肉丝，来北方最之后印象最深的是宫保鸡丁。哈哈），而肯德基的鸡腿、汉堡在每一个城市都是一样的味道。我觉的这一个例子可以清楚的认识到建造者模式有一个固定的建造过程。建造者模式实现了依赖倒转原则，抽象不应该依赖细节，细节应该依赖与抽象。建造者模式的定义是：将一个复杂对象的构造与它的表示分离，使同样的构建过程可以创建不同的表示，这样的设计模式被称为建造者模式。
++ 建造者模式的角色定义，在建造者模式中存在以下4个角色：
+    - builder:为创建一个产品对象的各个部件指定抽象接口
+    - ConcreteBuilder:实现Builder的接口以构造和装配该产品的各个部件，定义并明确它所创建的表示，并提供一个检索产品的接口
+    - Director:构造一个使用Builder接口的对象
+    -  Product:表示被构造的复杂对象。ConcreteBuilder创建该产品的内部表示并定义它的装配过程，包含定义组成部件的类，包括将这些部件装配成最终产品的接口 
 
+```java
+public class XMan {
+	
+	private String name;
+	 
+	private Integer age;
+	
+    private String xFactor;
+    
+    private String lover;
+
+	public String getName() {
+		return name;
+	}
+
+	public XMan setName(String name) {
+		this.name = name;
+		return this;
+	}
+
+	public Integer getAge() {
+		return age;
+	}
+
+	public XMan setAge(Integer age) {
+		this.age = age;
+		return this;
+	}
+
+	public String getxFactor() {
+        return xFactor;
+    }
+
+    public XMan setxFactor(String xFactor) {
+        this.xFactor = xFactor;
+        return this;
+    }
+
+    public String getLover() {
+        return lover;
+    }
+
+    public XMan setLover(String lover) {
+        this.lover = lover;
+        return this;
+    }
+}
+
+
+```
+
+```java
+
+public class WolverineDirector {
+	
+    public XMan constructWolverine(WolverineBuilder wolverineBuilder) {
+        return wolverineBuilder
+                .buildXFactor()
+                .buildLover()
+                .buildName()
+                .buildAge()
+                .buildXman();
+    }
+}
+
+
+public class WolverineBuilder implements XManBuilder {
+	
+    XMan mXMan;
+    
+    WolverineBuilder() {
+        mXMan = new XMan();
+    }
+    
+    // need to consider 
+
+   /* @Override
+    public WolverineBuilder buildXFactor() {
+        mXMan.setxFactor("claw");
+        System.out.println(mXMan.getxFactor());
+        return this;
+    }*/
+    
+    @Override
+	public XManBuilder buildXFactor() {
+    	 mXMan.setxFactor("claw");
+         System.out.println(mXMan.getxFactor());
+         return this;
+	}
+
+    @Override
+    public WolverineBuilder buildLover() {
+        mXMan.setLover("Jane");
+        System.out.println(mXMan.getLover());
+        return this;
+    }
+
+    @Override
+	public WolverineBuilder buildName() {
+		mXMan.setName("Wali");
+		System.out.println(mXMan.getName());
+		return this;
+	}
+	
+	@Override
+	public WolverineBuilder buildAge() {
+		mXMan.setAge(18);
+		System.out.println(mXMan.getAge());
+		return this;
+	}
+	
+	@Override
+	public XMan buildXman() {
+        System.out.println("Wolverine is successfully built");
+        return mXMan;
+    }
+
+}
+
+
+public interface XManBuilder {
+	
+    XManBuilder buildXFactor();
+    
+    XManBuilder buildLover();
+    
+    XManBuilder buildName();
+    
+    XManBuilder buildAge();
+    
+    XMan buildXman();
+}
+
+
+```
 # 原型模式
-*
-*
+[博客参考](https://www.cnblogs.com/lfxiao/p/6812835.html)
+* 原型模式（Prototype Pattern）是用于创建重复的对象，同时又能保证性能。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式
+
+```java
+public class ShallowCopy  extends BaseMessage implements Cloneable {
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        ShallowCopy shallowCopy=null;
+        try {
+            shallowCopy= (ShallowCopy) super.clone();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return shallowCopy;
+    }
+
+}
+
+
+public class DeepCopy extends BaseMessage implements Cloneable {
+
+    @SuppressWarnings("unchecked")
+	@Override
+    protected Object clone() throws CloneNotSupportedException {
+        DeepCopy deepCopy=null;
+        try {
+            deepCopy= (DeepCopy) super.clone();
+            this.setImgList((ArrayList<String>) this.getImgList().clone());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return deepCopy;
+    }
+}
+
+
+
+public abstract class BaseMessage {
+
+    /**
+     * 发件人
+     */
+    private String send;
+
+    /**
+     * 收件人
+     */
+    private String receiver;
+
+    /**
+     * 消息
+     */
+    private String message;
+
+    private ArrayList<String> imgList = new ArrayList<>();
+
+    public ArrayList<String> getImgList() {
+        return imgList;
+    }
+
+    public void setImgList(ArrayList<String> imgList) {
+        this.imgList = imgList;
+    }
+
+    public String getSend() {
+        return send;
+    }
+
+    public void setSend(String send) {
+        this.send = send;
+    }
+
+    public String getReceiver() {
+        return receiver;
+    }
+
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void addImage(String image){
+        getImgList().add(image);
+    }
+
+   /*
+    * 发送消息
+ 
+    public void sendMessage(){
+        System.out.println(getReceiver()+getMessage()+"     娃娃图片数量"+getImgList().size()+"     发件人"+getSend());
+    }
+} 
+
+```
 
 # 适配器模式
 *
