@@ -24,14 +24,23 @@ import java.util.ArrayList;
 * @version    V1.0
  */
 public abstract class BaseMessage {
-    //发件人
+
+    /**
+     * 发件人
+     */
     private String send;
-    //收件人
+
+    /**
+     * 收件人
+     */
     private String receiver;
-    //消息
+
+    /**
+     * 消息
+     */
     private String message;
 
-    private ArrayList<String> imgList=new ArrayList<>();
+    private ArrayList<String> imgList = new ArrayList<>();
 
     public ArrayList<String> getImgList() {
         return imgList;

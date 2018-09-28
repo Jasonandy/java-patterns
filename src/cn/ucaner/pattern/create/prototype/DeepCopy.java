@@ -10,8 +10,10 @@
  */
 package cn.ucaner.pattern.create.prototype;
 
-import java.util.ArrayList;
+
 import cn.ucaner.pattern.create.prototype.prototypeAbs.BaseMessage;
+
+import java.util.ArrayList;
 
 /**
 * @Package：cn.ucaner.pattern.create.prototype   

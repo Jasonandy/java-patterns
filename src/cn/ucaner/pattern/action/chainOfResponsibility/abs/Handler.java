@@ -82,7 +82,9 @@ public abstract class Handler {
      * @Autor: Jason - jasonandy@hotmail.com
      */
     public abstract int getLevel();
-    
+
+
+
     /**
      * @Description: 处理者名字
      * @return String

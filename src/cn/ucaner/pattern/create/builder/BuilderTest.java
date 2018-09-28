@@ -22,7 +22,8 @@ package cn.ucaner.pattern.create.builder;
 * @version    V1.0
  */
 public class BuilderTest {
-	
+
+
     public static void main(String[] args) {
     	
         WolverineDirector director = new WolverineDirector();
@@ -36,11 +37,10 @@ public class BuilderTest {
         System.out.println(wolverine.toString());
     }
 }
-//Outputs
-//claw
+//Outputsclaw
 //Jane
-//Name is successfully built
-//Age is successfully built
+//Wali
+//18
 //Wolverine is successfully built
 //Lover:Jane  xFactor:claw Name:Wali Age:18
-//cn.ucaner.pattern.create.builder.XMan@7852e922
+//cn.ucaner.pattern.create.builder.XMan@4554617c
