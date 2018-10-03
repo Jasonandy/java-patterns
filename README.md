@@ -499,12 +499,532 @@ public abstract class BaseMessage {
 ```
 
 # 适配器模式
-*
-*
+* 适配器就是一种适配中间件，它存在于不匹配的二者之间，用于连接二者，将不匹配变得匹配，简单点理解就是平常所见的转接头，转换器之类的存在
+* 适配器模式有两种
+    + 对象适配器
+    + 接口适配器
+   
+[博客参考](http://www.cnblogs.com/V1haoge/p/6479118.html)
+
+``接口适配器``
+
+```java
+/**     
+* @Package：cn.ucaner.pattern.structure.adapter.charge.inf   
+* @ClassName：ThreeInterface   
+* @Description：   <p> 三口插头 </p>
+* <pre>创建一个能够根据所传递对象的不同而具有不同行为的方法被称为[策略设计模式]</pre>
+* @Author： - Jason   
+* @CreatTime：2018年6月5日 下午8:51:29   
+* @Modify By：   
+* @ModifyTime：  2018年6月5日
+* @Modify marker：   
+* @version    V1.0
+*/
+public interface ThreeInterface {
+	
+	/**
+	 * @Description:三个口的插头有 一 个 功能，能够为三个触角的插头提供电源
+	 * @CreatTime: 2018年9月23日
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
+	public void OfferPowerForThree();
+}
+```
+
+```java
+public interface TwoInterface {
+	
+	/**
+	* @Description: 两口的插座
+	* @CreatTime: 2018年9月23日
+	* @Autor: Jason - jasonandy@hotmail.com
+	 */
+	 public void OfferPowerForTwo();
+
+}
+
+```
+
+```java
+public class Three2TwoAdapter implements ThreeInterface{
+
+	/**
+	 * 2口充电头 - 适配器
+	 */
+	TwoInterface twoInterface;
+	
+	/**
+	 * 3口 转两口的插座 - 适配
+	 * @param twoInterface
+	 */
+	public Three2TwoAdapter(TwoInterface twoInterface) {
+		super();
+		this.twoInterface = twoInterface;
+	}
+
+
+	/**
+	 * 三口的适配器 适用的是俩孔的插座
+	 */
+	@Override
+	public void OfferPowerForThree() {
+		 twoInterface.OfferPowerForTwo();
+	}
+
+}
+
+```
+```java
+public class Three3TwoAdapter implements TwoInterface{
+
+	ThreeInterface threeInterface;
+	
+	/**
+	 * 2口 转3口的插座 - 适配
+	 * @param twoInterface
+	 */
+	public Three3TwoAdapter(ThreeInterface threeInterface) {
+		super();
+		this.threeInterface = threeInterface;
+	}
+
+	
+	@Override
+	public void OfferPowerForTwo() {
+		threeInterface.OfferPowerForThree();
+	}
+
+}
+```
+```java
+/**
+* 转换器
+*/
+public class ChinaCharge implements TwoInterface{
+
+	/**
+	 * OfferPowerForTwo 标准的两口插座
+	 */
+	@Override
+	public void OfferPowerForTwo() {
+		System.out.println("I'm China Charge. 220V.  - 中国的标准的220V 50HZ 电源.");
+	}
+
+}
+
+```
+```java
+public class HongKongCharge implements  ThreeInterface{
+
+	/**
+	 * 	大家好这里是标准的3口插头
+	 */
+	@Override
+	public void OfferPowerForThree() {
+		System.out.println("I'm Three Charge - HK Standard");
+	}
+
+}
+
+```
+
+``对象适配``
+```java
+/**
+* @Package：cn.ucaner.pattern.structure.adapter.adapterAbs   
+* @ClassName：IUserInfo   
+* @Description：   <p> 适配器模式 - -抽象用户类 </p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午6:03:19   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public interface IUserInfo { 
+    //user信息
+    String getUserName();
+    String getHomeAddress();
+    String getMobileNumber();
+    String getSex();
+    
+    //job信息
+    String getJobPosition();
+
+}
+```
+```java
+public interface IOtherInfo {
+	
+	/**
+	 * @Description:获取用户的User信息
+	 * @return: HashMap<String,String>
+	 * @CreatTime: 2018年9月23日
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
+    HashMap<String,String> getUserInfo();
+    
+    /**
+     * @Description: 获取的是用户的job信息
+     * @return: HashMap<String,String>
+     * @CreatTime: 2018年9月23日
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
+    HashMap<String,String> getUserJobInfo();
+}
+
+```
+``类适配``
+```java
+public class MeUserInfo implements IUserInfo {
+
+    @Override
+    public String getUserName() {
+        System.out.print("员工姓名");
+        return null;
+    }
+
+    @Override
+    public String getHomeAddress() {
+        System.out.print("员工住址");
+        return null;
+    }
+
+    @Override
+    public String getMobileNumber() {
+        System.out.print("员工号码");
+        return null;
+    }
+
+    @Override
+    public String getSex() {
+        System.out.print("员工性别");
+        return null;
+    }
+
+    @Override
+    public String getJobPosition() {
+        System.out.print("员工公司地址");
+        return null;
+    }
+
+	@Override
+	public String toString() {
+		return "MeUserInfo [getUserName()=" + getUserName() + ", getHomeAddress()=" + getHomeAddress()
+				+ ", getMobileNumber()=" + getMobileNumber() + ", getSex()=" + getSex() + ", getJobPosition()="
+				+ getJobPosition() + "]";
+	}
+    
+    
+}
+
+```
+```java
+public class OtherUserInfo implements IOtherInfo {
+	
+    @Override
+    public HashMap<String, String> getUserInfo() {
+        HashMap<String,String> hashMap=new HashMap<>();
+        hashMap.put("username","员工名称");
+        hashMap.put("address","员工住址");
+        hashMap.put("number","员工号码");
+        hashMap.put("sex","员工性别");
+        return hashMap;
+    }
+
+    @Override
+    public HashMap<String, String> getUserJobInfo() {
+        HashMap<String,String> hashMap=new HashMap<>();
+        hashMap.put("jobaddress","员工公司地址");
+        return hashMap;
+    }
+
+	@Override
+	public String toString() {
+		return "OtherUserInfo [getUserInfo()=" + getUserInfo() + ", getUserJobInfo()=" + getUserJobInfo() + "]";
+	}
+	
+}
+
+```
+``对象适配``
+```java
+public class UserAdapter extends OtherUserInfo implements IUserInfo{
+	
+    @Override
+    public String getUserName() {
+        System.out.println(getUserInfo().get("username"));
+        return null;
+    }
+
+    @Override
+    public String getHomeAddress() {
+        System.out.println(getUserInfo().get("address"));
+        return null;
+    }
+
+    @Override
+    public String getMobileNumber() {
+        System.out.println(getUserInfo().get("number"));
+        return null;
+    }
+
+    @Override
+    public String getSex() {
+        System.out.println(getUserInfo().get("sex"));
+        return null;
+    }
+
+    @Override
+    public String getJobPosition() {
+        System.out.println(getUserJobInfo().get("jobaddress"));
+        return null;
+    }
+
+	@Override
+	public String toString() {
+		return "UserAdapter [getUserName()=" + getUserName() + ", getHomeAddress()=" + getHomeAddress()
+				+ ", getMobileNumber()=" + getMobileNumber() + ", getSex()=" + getSex() + ", getJobPosition()="
+				+ getJobPosition() + "]";
+	}
+    
+}
+
+```
+``Test-Main``
+```java
+
+public class AdapterMain {
+	
+    public static void main(String[] args) {
+       
+    	/**
+    	 * 接口是iuserInfo  实例拿的是 OtherUserInfo
+    	 */
+        IUserInfo iUserInfo=new UserAdapter();
+        iUserInfo.getHomeAddress();
+        System.out.println(iUserInfo.toString());
+        
+        /**
+         * iuserInfo  实例也是 UserInfo 
+         */
+        IUserInfo iUserInfoMe=new MeUserInfo();
+        iUserInfoMe.getHomeAddress();
+        System.out.println(iUserInfoMe.toString());
+        
+        
+    }
+}
+```
 
 # 代理模式
-*
-*
+* 代理模式是Java常见的设计模式之一。所谓代理模式是指客户端并不直接调用实际的对象，而是通过调用代理，来间接的调用实际的对象
+* 静态代理
+* 动态代理
+* CGlib代理
+
+[代理模式参考](https://www.cnblogs.com/cenyu/p/6289209.html)
+``静态代理``
+```java
+/**
+* @Package：cn.ucaner.pattern.structure.proxy.staticProxy   
+* @ClassName：Subject   
+* @Description：   <p> static Proxy 代理模式接口类 </p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午1:46:44   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public interface Subject {
+	
+	/**
+	 * static Proxy
+	 */
+    void request();
+    
+}
+
+/**
+* @Package：cn.ucaner.pattern.structure.proxy.staticProxy   
+* @ClassName：RealSuject   
+* @Description：   <p> 代理模式真实类</p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午1:47:02   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public class RealSuject implements Subject {
+	
+    @Override
+    public void request() {
+        System.out.println("*** static proxy do request ！By Jason ***");
+    }
+}
+
+/**
+* @Package：cn.ucaner.pattern.structure.proxy.staticProxy   
+* @ClassName：Proxy   
+* @Description：   <p> 代理模式 代理模式代理类,他和装饰器模式的实现有点相近{@link Decorator}</p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午1:47:45   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public class Proxy implements Subject {
+	
+    private Subject realSuject;
+
+    public Proxy(Subject realSuject) {
+        this.realSuject = realSuject;
+    }
+
+    @Override
+    public void request() {
+        if(realSuject!=null){
+            realSuject.request();
+        }
+    }
+}
+
+```
+``动态代理``
+```java
+public interface Subject {
+
+	/**
+	 * dynamicProxy
+	 */
+    public abstract void request();
+
+}
+
+public class RealSujectImpl implements Subject {
+
+    @Override
+    public void request() {
+        System.out.println("*** dynamicProxy  do request ***");
+    }
+
+}
+
+/**
+* @Package：cn.ucaner.pattern.structure.proxy.dynamicProxy   
+* @ClassName：SubjectInvocationHandler   
+* @Description：   <p> 动态代理模式 --
+*  利用java.lang.reflect.Proxy类和java.lang.reflect.InvocationHandler接口定义代理类的实现
+* </p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午5:04:37   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public class SubjectInvocationHandler implements InvocationHandler {
+
+	/**
+	 * 目标对象 
+	 */
+    private Object target;
+
+    
+    public SubjectInvocationHandler(Object target) {
+        this.target = target;
+    }
+
+    /**
+     * 描述: 实现调用  
+     */
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("----Dynamic Proxy invoke method Start  ----");
+        Object result = method.invoke(target, args);//方法调用 
+        System.out.println("----Dynamic Proxy invoke method End by Jason----");
+        return result;
+    }
+
+    public Object getProxy() {
+        
+    	//获取当前线程的 classloder 
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        
+        //获取所有的interface 
+        Class<?>[] interfaces = target.getClass().getInterfaces();
+        return Proxy.newProxyInstance(loader, interfaces, this);
+    }
+}
+
+```
+``TEST``
+```java
+/**
+* @Package：cn.ucaner.pattern.structure.proxy   
+* @ClassName：ProxyMain   
+* @Description：   <p> 代理模式运行类</p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午1:45:08   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public class ProxyMain {
+
+    public static void main(String[] args) {
+    	//静态代理
+    	staticProxy();
+    	//动态代理
+        dynamicProxy();
+    }
+
+    /**
+     * 静态代理
+     */
+    private static void staticProxy() {
+        RealSuject realSuject = new RealSuject();
+        Proxy proxy = new Proxy(realSuject);
+        proxy.request();
+    }
+
+   /**
+    * 动态代理
+    */
+    private static void dynamicProxy(){
+        RealSujectImpl realSubject=new RealSujectImpl();
+        SubjectInvocationHandler handler=new SubjectInvocationHandler(realSubject);
+        Subject subject= (Subject) handler.getProxy();
+        subject.request();
+    }
+}
+
+```
+
+``cglib``
+```text
+Cglib代理
+
+上面的静态代理和动态代理模式都是要求目标对象是实现一个接口的目标对象,但是有时候目标对象只是一个单独的对象,并没有实现任何的接口,这个时候就可以使用以目标对象子类的方式类实现代理,这种方法就叫做:Cglib代理
+
+Cglib代理,也叫作子类代理,它是在内存中构建一个子类对象从而实现对目标对象功能的扩展.
+
+JDK的动态代理有一个限制,就是使用动态代理的对象必须实现一个或多个接口,如果想代理没有实现接口的类,就可以使用Cglib实现.
+Cglib是一个强大的高性能的代码生成包,它可以在运行期扩展java类与实现java接口.它广泛的被许多AOP的框架使用,例如Spring AOP和synaop,为他们提供方法的interception(拦截)
+Cglib包的底层是通过使用一个小而块的字节码处理框架ASM来转换字节码并生成新的类.不鼓励直接使用ASM,因为它要求你必须对JVM内部结构包括class文件的格式和指令集都很熟悉.
+
+Cglib子类代理实现方法:
+1.需要引入cglib的jar文件,但是Spring的核心包中已经包括了Cglib功能,所以直接引入pring-core-3.2.5.jar即可.
+2.引入功能包后,就可以在内存中动态构建子类
+3.代理的类不能为final,否则报错
+4.目标对象的方法如果为final/static,那么就不会被拦截,即不会执行目标对象额外的业务方法.
+```
+
 
 # 外观模式
 *
