@@ -10,8 +10,6 @@
  */
 package cn.ucaner.pattern.action.command.absCommand;
 
-import java.util.List;
-
 import cn.ucaner.pattern.action.command.Code;
 import cn.ucaner.pattern.action.command.Product;
 import cn.ucaner.pattern.action.command.Projecter;

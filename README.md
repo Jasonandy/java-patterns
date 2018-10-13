@@ -1060,11 +1060,344 @@ Cglib子类代理实现方法:
 * 定义对象间的一种一对多的依赖关系,当一个对象的状态发生改变时,所有依赖于它的对象都得到通知并被自动更新。允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它的类
 * 1.一个对象的行为取决于它的状态,并且它必须在运行时刻根据状态改变它的行为。
 * 2.一个操作中含有庞大的多分支的条件语句，且这些分支依赖于该对象的状态。
+```java
+public class Context {
 
+	/**
+	 * 定义出所有的电梯状态  用在setState() 枚举状态.
+	 */
+    public static final Open open = new Open(); //打开状态
+    public static final Close close = new Close();//关闭状态
+    public static final Run run = new Run();//运行状态
+    public static final Stop stop = new Stop();//停止状态
+
+    /**
+     * 当前的状态
+     */
+    private State nowState;
+
+    public void setNowState(State nowState) {
+        this.nowState = nowState;
+        /**
+         * this --> context   [其实就是nowContext]
+         */
+        this.nowState.setContext(this);
+    }
+
+    public State getNowState() {
+        return nowState;
+    }
+
+    public void open(){
+        nowState.open();
+    }
+
+    public void close(){
+        nowState.close();
+    }
+
+    public void run(){
+        nowState.run();
+    }
+
+    public void stop(){
+        nowState.stop();
+    }
+}
+
+
+public abstract class State {
+	
+	/**
+	 * Context - 状态模式的上下文.
+	 */
+    protected Context context;
+
+    /**
+     * @Description: 设置状态
+     * @param context 
+     * @Autor: Jason
+     */
+    public void setContext(Context context) {
+        this.context = context;
+    }
+
+    /**
+     * @Description: 电梯门开启的动作
+     * @Autor: Jason
+     */
+    public abstract void open();
+    
+    /**
+     * @Description: 电梯门关闭的动作
+     * @Autor: Jason
+     */
+    public abstract void close();
+    
+    /**
+     * @Description:电梯运行起来
+     * @Autor: Jason
+     */
+    public abstract void run();
+    
+    /**
+     * @Description:电梯停下来
+     * @Autor: Jason
+     */
+    public abstract void stop();
+}
+
+
+
+public class Close extends State {
+
+
+	/**
+	 * context - state的context 
+	 */
+    @Override
+    public void open() {
+        //状态修改
+        context.setNowState(Context.open); //设置为open状态
+        //委托执行 
+        context.getNowState().open();
+    }
+
+    @Override
+    public void close() {
+       System.out.print("电梯门关闭");
+    }
+
+    //运行
+    @Override
+    public void run() {
+        //状态修改
+        context.setNowState(Context.run);
+        //委托执行
+        context.getNowState().run();
+    }
+
+    //停止
+    @Override
+    public void stop() {
+        //状态修改
+        context.setNowState(Context.stop);
+        //委托执行
+        context.getNowState().stop();
+
+    }
+}
+
+
+public class Open extends State {
+
+
+	/**
+	 * 开启
+	 */
+    @Override
+    public void open() {
+        System.out.println("OPEN-电梯门Open.");
+    }
+
+    /**
+     * 关闭 
+     */
+    @Override
+    public void close() {
+        //状态修改
+        context.setNowState(Context.close);
+        //委托执行
+        context.getNowState().close();
+    }
+
+    /**
+     * 开着门不能跑
+     */
+    @Override
+    public void run() {
+    	// by Jason
+    	System.out.println("RUN-开着门不能Run.!");
+    }
+
+    /**
+     * 开着门就是停止的
+     */
+    @Override
+    public void stop() {
+    	//by Jason
+    	System.out.println("STOP-开着门就是Stop.!");
+    }
+}
+
+
+public class Run extends State {
+
+
+	/**
+	 * 运行状态不能开门
+	 */
+    @Override
+    public void open() {
+        //状态修改 by Json
+    	System.out.println("OPEN-Run状态不能开门!");
+    }
+
+    /**
+     * 运行状态门就是关着的
+     */
+    @Override
+    public void close() {
+    	//by Jason
+    	System.out.println("CLOSE-Run状态门就是关着的!");
+    }
+
+    @Override
+    public void run() {
+        System.out.println("RUN-电梯正在Run.");
+    }
+
+    /**
+     * 停止运行
+     */
+    @Override
+    public void stop() {
+        context.setNowState(Context.stop); //Run -->Stop 
+        context.getNowState().stop();
+    }
+}
+
+
+public class Stop extends State {
+
+	/**
+	 * 停下来 然后开启电梯.
+	 */
+    @Override
+    public void open() {
+        context.setNowState(Context.open);
+        context.getNowState().open();
+    }
+
+
+    @Override
+    public void close() {
+    	System.out.println("Closed. - 电梯Close.");
+    }
+
+    @Override
+    public void run() {
+        context.setNowState(Context.run);
+        context.getNowState().run();
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("Stop-电梯停止了");
+    }
+}
+
+
+```
 
 # 访问者模式
 * 访问者模式是对象的行为模式。访问者模式的目的是封装一些施加于某种数据结构元素之上的操作。一旦这些操作需要修改的话，接受这个操作的数据结构则可以保持不变
 * 变量被声明时的类型叫做变量的静态类型(Static Type)，有些人又把静态类型叫做明显类型(Apparent Type)；而变量所引用的对象的真实类型又叫做变量的实际类型(Actual Type)。
+
+```java
+
+//被观察的主体
+public interface Subject {
+
+	/**
+	 * @Description: 用以注册观察者   - 也就是都有谁来关注这个 可以理解为订阅这个消息
+	 * @param o 具体的观察者
+	 * @Autor: Jason
+	 */
+    public void registerObserver(ObserverInf o);
+
+    /**
+     * @Description: 用以删除观察者  - 也就会谁会来退订这个所观察的对象  - 可以通俗的理解为退订
+     * @param o 具体的观察者
+     * @Autor: Jason
+     */
+    public void removeObserver(ObserverInf o);
+
+    /**
+     * @Description: 来通知这个观察者 
+     * @Autor: Jason
+     */
+    public void notifyObservers();
+}
+
+//观察者接口 - 可以理解为 订阅者接口 
+public interface  ObserverInf {
+	
+	/**
+	 * @Description: 更新数据 - 数据发生改变的时候通知到其他地方.
+	 * @param temp  温度
+	 * @param humidity 湿度
+	 * @param pressure 气压
+	 * @Autor: Jason
+	 */
+	public void update(float temperature, float humidity, float pressure);
+
+}
+
+//消息的发布方式
+public class ForecastDisplay implements ObserverInf, DisplayElement{
+
+	private float currentPressure = 28.82f; // 当前气压
+    private float lastPressure;             // 上一次的气压
+    private Subject weatherData;            // 主题
+
+    public ForecastDisplay(Subject weatherData) {
+        this.weatherData = weatherData;
+        this.weatherData.registerObserver(this);
+    }
+
+	@Override
+	public void display() {
+		if (currentPressure > lastPressure) {
+            System.out.println("3,天气预报：温度正在持续上升！");
+        } else {
+            System.out.println("3,天气预报：注意气温下降了，可能有雨！");
+        }
+	}
+
+	@Override
+	public void update(float temperature, float humidity, float pressure) {
+		lastPressure = currentPressure;
+        currentPressure = pressure;
+        display();
+	}
+
+	@Override
+	public void sysnc() {
+		System.out.println("FORECASTDISPLAY - 开始数据同步.");
+	}
+
+}
+
+//发布模式的接口 - 订阅的方式
+public interface  DisplayElement {
+
+	/**
+	 * @Description: 外观显示方法  - 展示 被观察者 的具体的信息的方法.
+	 * @Autor: Jason
+	 */
+    public void display();
+    
+    /**
+     * @Description:开始同步数据.
+     * @Autor: Jason
+     */
+    public void sysnc();
+}
+
+
+```
+
 
 # 享元模式  :dog:
 * “享”就是分享之意，指一物被众人共享，而这也正是该模式的终旨所在

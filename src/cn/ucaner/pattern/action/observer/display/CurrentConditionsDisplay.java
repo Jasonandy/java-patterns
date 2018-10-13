@@ -44,7 +44,7 @@ public class CurrentConditionsDisplay implements ObserverInf, DisplayElement{
 
 	@Override
 	public void display() {
-		System.out.println("1,当前布告板: 温度"+ temperature +"度,湿度"+humidity+"%");
+		System.out.println("NO.1:当前布告板: 温度"+ temperature +"度,湿度"+humidity+"%");
 	}
 
 	@Override

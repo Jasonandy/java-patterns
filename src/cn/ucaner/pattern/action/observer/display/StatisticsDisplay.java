@@ -44,7 +44,7 @@ public class StatisticsDisplay implements ObserverInf, DisplayElement{
 
 	@Override
 	public void display() {
-		System.out.println("2,平均温度：" + (tempSum / numReadings) + ",最大温度："+ maxTemp + ",最小温度：" + minTemp);
+		System.out.println("NO.2:平均温度：" + (tempSum / numReadings) + ",最大温度："+ maxTemp + ",最小温度：" + minTemp);
 	}
 
 	

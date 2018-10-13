@@ -3,13 +3,29 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
+	
+	<!-- 
+		This is a opensource porject. 
+		
+		TODO:
+			1.将代码申请发布到中央仓库
+			2.https://issues.sonatype.org/browse/OSSRH-43324
+			3.
+	 -->
+	 
+	 
+	 
+	<!-- 项目管理-->
+ 	<name>Java-Patterns</name>
+	<description>This is a Java-Patterns Learing Porject Designed  by Jason.</description> 
+	
 	<groupId>cn.ucaner</groupId>
 	<artifactId>patterns</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-
-
+	
+	
+	<!-- BULID -->
     <build>
         <plugins>
             <plugin>
@@ -22,7 +38,23 @@
             </plugin>
         </plugins>
     </build>
-    <name>Java-Patterns</name>
+    
+    <!-- LICENSES  -->
+    <licenses>
+	 	<license>
+	      	<name>The Apache Software License, Version 2.0</name>
+	      	<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+	      	<distribution>repo</distribution>
+		</license>
+	</licenses>
 	
+	<!-- DEVELOPERS  -->
+	<developers>
+		<developer>
+		<name>Jasonandy</name>
+		<email>jasonandy@hotmail.com</email>
+		<url>https://github.com/Jasonandy</url>
+		</developer>
+	</developers>
 
 </project>

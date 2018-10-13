@@ -38,9 +38,9 @@ public class ForecastDisplay implements ObserverInf, DisplayElement{
 	@Override
 	public void display() {
 		if (currentPressure > lastPressure) {
-            System.out.println("3,天气预报：温度正在持续上升！");
+            System.out.println("NO.3: 天气预报：温度正在持续上升！");
         } else {
-            System.out.println("3,天气预报：注意气温下降了，可能有雨！");
+            System.out.println("NO.3: 天气预报：注意气温下降了，可能有雨！");
         }
 	}
 

@@ -57,10 +57,17 @@ public class DisplayTest {
          * 通知到订阅了 该对象的人
          * 消息推送过去.
          */
+        System.out.println("----------------------");
         weatherData.setMeasurements(20, 65, 30.4f);
+        System.out.println("**********************");
         weatherData.setMeasurements(30, 70, 29.7f);
+        System.out.println("---------------------");
         weatherData.setMeasurements(25, 90, 29.6f);
+        System.out.println("**********************");
         weatherData.setMeasurements(32, 85, 26.5f);
+        System.out.println("---------------------");
+        weatherData.setMeasurements(32, 85, 26.5f);
+        System.out.println("**********************");
 	}
 
 }
