@@ -26,7 +26,9 @@ import cn.ucaner.pattern.action.state.absState.State;
  */
 public class Stop extends State {
 
-	//停下来要开电梯门
+	/**
+	 * 停下来 然后开启电梯.
+	 */
     @Override
     public void open() {
         context.setNowState(Context.open);
@@ -36,7 +38,7 @@ public class Stop extends State {
 
     @Override
     public void close() {
-
+    	System.out.println("Closed. - 电梯Close.");
     }
 
     @Override
@@ -47,6 +49,6 @@ public class Stop extends State {
 
     @Override
     public void stop() {
-        System.out.println("电梯停止了");
+        System.out.println("Stop-电梯停止了");
     }
 }

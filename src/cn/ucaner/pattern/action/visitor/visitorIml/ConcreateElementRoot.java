@@ -28,15 +28,26 @@ import cn.ucaner.pattern.action.visitor.visitorAbs.IVisitor;
 */
 public class ConcreateElementRoot extends Element{
 
+	/**
+	 * 定义超级管理员 root-admin 可以做啥.
+	 */
 	@Override
 	public void doVisite() {
 		Random random = new Random();
 		System.out.println("大家好，我是Root管理员，我倒数"+ random.nextInt(10)+"秒，不要给我搞什么大新闻！");
 	}
 
+	/**
+	 * 做具体的实现类.impl
+	 */
 	@Override
 	public void accept(IVisitor iVisitor) {
 		iVisitor.visit(this);
+	}
+
+	@Override
+	public void introduce() {
+		System.out.println("I'M ROOT.");
 	}
 
 }

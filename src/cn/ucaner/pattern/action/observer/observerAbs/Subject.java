@@ -29,21 +29,20 @@ public interface Subject {
 	
 	/**
 	 * @Description: 添加一个观察者
-	 * @param observer void
+	 * @param observer observer 
 	 * @Autor: Jason - jasonandy@hotmail.com
 	 */
     public void Attach(Observer observer);
     
     /**
 	 * @Description: 删除一个观察者
-	 * @param observer void
+	 * @param observer  observer
 	 * @Autor: Jason - jasonandy@hotmail.com
 	 */
     public void Detach(Observer observer);
     
     /**
 	 * @Description: 通知所有的观察者
-	 * @param observer void
 	 * @Autor: Jason - jasonandy@hotmail.com
 	 */
     public void Notify();

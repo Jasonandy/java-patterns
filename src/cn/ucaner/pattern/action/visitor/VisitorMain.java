@@ -29,8 +29,14 @@ public class VisitorMain {
 	
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
-        	//访问者模式 结构对象,获取一个Element
+        	/**
+        	 * 访问者模式 结构对象,获取一个Element
+        	 */
             Element el= ObjectStruture.createElement();
+            /**
+             * iVisitor.visit(this);
+             * this : this - element
+             */
             el.accept(new Visitor());
         }
     }

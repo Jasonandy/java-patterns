@@ -27,17 +27,25 @@ import cn.ucaner.pattern.action.visitor.visitorAbs.IVisitor;
 public class ConcreateElementAdmin extends Element {
 	
 	
+	/**
+	 * 定义好的访问逻辑 - 管理员可以干啥.
+	 */
     @Override
     public void doVisite() {
         System.out.println("我是管理员 活动了20分种,系统操作:删除了好多文件  ***********");
     }
 
     /**
-    * 描述: 
-    * @param iVisitor
+    * 描述: ConcreateElementAdmin - 管理员 .
+    * @param iVisitor   -- 接口impl 做的具体的动作.
      */
     @Override
     public void accept(IVisitor iVisitor) {
         iVisitor.visit(this);
     }
+
+	@Override
+	public void introduce() {
+		System.out.println("I'M ADMIN.");
+	}
 }

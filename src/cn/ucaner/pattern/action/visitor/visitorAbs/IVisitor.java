@@ -27,14 +27,24 @@ import cn.ucaner.pattern.action.visitor.visitorIml.ConcreateElementUser;
  */
 public interface IVisitor {
 	
-    //可以访问哪些对象
-	
-	//普通用户
+	/**
+	 * @Description:可以访问哪些对象 
+	 * @param user 普通用户
+	 * @Autor: Jason
+	 */
     public void visit(ConcreateElementUser user);
     
-    //管理员
+    /**
+     * @Description: 管理员可以做的事情
+     * @param admin 管理员
+     * @Autor: Jason
+     */
     public void visit(ConcreateElementAdmin admin);
     
-    //Root管理员
+    /**
+     * @Description: 超级管理员拥有的权限
+     * @param root Root管理员 超级管理员
+     * @Autor: Jason
+     */
     public void visit(ConcreateElementRoot root);
 }

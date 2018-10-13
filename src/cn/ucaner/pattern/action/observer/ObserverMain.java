@@ -67,5 +67,30 @@ public class ObserverMain {
         }
     }
 
-
 }
+//Outputs
+//Sorry , 条件不满足 - DiaoSi1已经被踢出队伍.
+//Sorry , 条件不满足 - DiaoSi3已经被踢出队伍.
+//Sorry , 条件不满足 - DiaoSi5已经被踢出队伍.
+//Sorry , 条件不满足 - DiaoSi7已经被踢出队伍.
+//Sorry , 条件不满足 - DiaoSi9已经被踢出队伍.
+//女神准备要去逛街了!!!
+//Hello , I'm GaoFuShuai .My Name is GFS1
+//Little sister ,小姐姐约吗？ My Wechat is 88
+//DiaoSi2已经知道女神出门,准备跟(wei)踪(sui)
+//DiaoSi2在下想约你可以吗？
+//Hello , I'm GaoFuShuai .My Name is GFS3
+//Little sister ,小姐姐约吗？ My Wechat is 88
+//DiaoSi4已经知道女神出门,准备跟(wei)踪(sui)
+//DiaoSi4在下想约你可以吗？
+//Hello , I'm GaoFuShuai .My Name is GFS5
+//Little sister ,小姐姐约吗？ My Wechat is 88
+//DiaoSi6已经知道女神出门,准备跟(wei)踪(sui)
+//DiaoSi6在下想约你可以吗？
+//Hello , I'm GaoFuShuai .My Name is GFS7
+//Little sister ,小姐姐约吗？ My Wechat is 88
+//DiaoSi8已经知道女神出门,准备跟(wei)踪(sui)
+//DiaoSi8在下想约你可以吗？
+//Hello , I'm GaoFuShuai .My Name is GFS9
+//Little sister ,小姐姐约吗？ My Wechat is 104
+//追求者已全部出动!

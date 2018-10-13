@@ -15,7 +15,7 @@ import cn.ucaner.pattern.action.observer.observerAbs.Observer;
 /**     
 * @Package：cn.ucaner.pattern.action.observer.observerIml   
 * @ClassName：GaoFuShuai   
-* @Description：   <p> 高富帅 </p>
+* @Description：   <p> 观察者对象 - 高富帅 </p>
 * @Author： - Jason   
 * @CreatTime：
 * @Modify By：   

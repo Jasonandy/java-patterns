@@ -23,11 +23,26 @@ package cn.ucaner.pattern.action.visitor.visitorAbs;
  */
 public abstract class Element {
 	
-	//具体的元素可以做的事
+	/**
+	 * 抽象类 定义元素具体可以做的事
+	 */
 	
-    //定义访问逻辑
+	/**
+	 * @Description: INTRODUCE
+	 * @Autor: Jason
+	 */
+	public abstract void introduce();
+	
+	/**
+	 * @Description: 定义访问逻辑
+	 * @Autor: Jason
+	 */
     public abstract void doVisite();
     
-    //定义谁能访问
+    /**
+     * @Description: 定义谁能访问
+     * @param iVisitor  访问接口 - impl - Visitor - doVisite
+     * @Autor: Jason
+     */
     public abstract void accept(IVisitor iVisitor);
 }

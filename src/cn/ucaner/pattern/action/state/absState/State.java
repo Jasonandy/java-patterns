@@ -23,22 +23,41 @@ package cn.ucaner.pattern.action.state.absState;
  */
 public abstract class State {
 	
+	/**
+	 * Context - 状态模式的上下文.
+	 */
     protected Context context;
 
-    //设置状态
+    /**
+     * @Description: 设置状态
+     * @param context 
+     * @Autor: Jason
+     */
     public void setContext(Context context) {
         this.context = context;
     }
 
-    //电梯门开启的动作
+    /**
+     * @Description: 电梯门开启的动作
+     * @Autor: Jason
+     */
     public abstract void open();
     
-    //电梯门关闭的动作
+    /**
+     * @Description: 电梯门关闭的动作
+     * @Autor: Jason
+     */
     public abstract void close();
     
-    //电梯运行起来
+    /**
+     * @Description:电梯运行起来
+     * @Autor: Jason
+     */
     public abstract void run();
     
-    //电梯停下来
+    /**
+     * @Description:电梯停下来
+     * @Autor: Jason
+     */
     public abstract void stop();
 }

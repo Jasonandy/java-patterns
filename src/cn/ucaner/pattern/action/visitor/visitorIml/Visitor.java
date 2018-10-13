@@ -27,16 +27,19 @@ public class Visitor implements IVisitor {
 
     @Override
     public void visit(ConcreateElementUser user) {
+    	user.introduce();
         user.doVisite();
     }
 
     @Override
     public void visit(ConcreateElementAdmin admin) {
+    	admin.introduce();
         admin.doVisite();
     }
 
 	@Override
 	public void visit(ConcreateElementRoot root) {
+		root.introduce();
 		root.doVisite();
 	}
 }

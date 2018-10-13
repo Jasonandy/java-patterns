@@ -28,17 +28,24 @@ import cn.ucaner.pattern.action.state.allState.Stop;
  */
 public class Context {
 
-    //定义出所有的电梯状态  用在setState();
-    public static final Open open=new Open();
-    public static final Close close=new Close();
-    public static final Run run=new Run();
-    public static final Stop stop=new Stop();
+	/**
+	 * 定义出所有的电梯状态  用在setState() 枚举状态.
+	 */
+    public static final Open open = new Open(); //打开状态
+    public static final Close close = new Close();//关闭状态
+    public static final Run run = new Run();//运行状态
+    public static final Stop stop = new Stop();//停止状态
 
-    //当前的状态
+    /**
+     * 当前的状态
+     */
     private State nowState;
 
     public void setNowState(State nowState) {
         this.nowState = nowState;
+        /**
+         * this --> context   [其实就是nowContext]
+         */
         this.nowState.setContext(this);
     }
 

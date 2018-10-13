@@ -27,11 +27,17 @@ import cn.ucaner.pattern.action.state.absState.State;
 public class Open extends State {
 
 
+	/**
+	 * 开启
+	 */
     @Override
     public void open() {
-        System.out.println("电梯门开启");
+        System.out.println("OPEN-电梯门Open.");
     }
 
+    /**
+     * 关闭 
+     */
     @Override
     public void close() {
         //状态修改
@@ -40,17 +46,21 @@ public class Open extends State {
         context.getNowState().close();
     }
 
-    //开着门不能跑
+    /**
+     * 开着门不能跑
+     */
     @Override
     public void run() {
     	// by Jason
-    	System.out.println("开着门不能跑！");
+    	System.out.println("RUN-开着门不能Run.!");
     }
 
-    //开着门就是停止的
+    /**
+     * 开着门就是停止的
+     */
     @Override
     public void stop() {
     	//by Jason
-    	System.out.println("开着门就是停止的!");
+    	System.out.println("STOP-开着门就是Stop.!");
     }
 }

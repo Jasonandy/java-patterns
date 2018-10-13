@@ -27,10 +27,11 @@ import cn.ucaner.pattern.action.visitor.visitorAbs.Element;
  */
 public class ObjectStruture {
 	
-   /**
-    * 返回一个具体的Element
-    * @return
-    */
+	/**
+	 * @Description: 创建具体的对象  - 不是单例 没有回收？
+	 * @return Element
+	 * @Autor: Jason
+	 */
     public static Element createElement(){
         Random random=new Random();
         int flag= random.nextInt(100)%3;

@@ -31,6 +31,9 @@ import cn.ucaner.pattern.action.observer.observerAbs.Subject;
 
 public class NvShen implements Subject{
 	
+	/**
+	 * 女神有一大堆观察者.
+	 */
     private List<Observer> observersList;
 
     //女神要去逛街了

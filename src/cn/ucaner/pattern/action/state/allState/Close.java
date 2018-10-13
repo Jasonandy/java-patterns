@@ -27,11 +27,14 @@ import cn.ucaner.pattern.action.state.absState.State;
 public class Close extends State {
 
 
+	/**
+	 * context - state的context 
+	 */
     @Override
     public void open() {
         //状态修改
-        context.setNowState(Context.open);
-        //委托执行
+        context.setNowState(Context.open); //设置为open状态
+        //委托执行 
         context.getNowState().open();
     }
 
