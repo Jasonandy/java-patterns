@@ -13,7 +13,7 @@ package cn.ucaner.pattern.structure.decorator.decoratorIml;
 /**
 * @Package：cn.ucaner.pattern.structure.decorator.decoratorIml   
 * @ClassName：SuagrFouthGradeSchoolReport   
-* @Description：   <p> 装饰器模式 </p>
+* @Description：   <p> 装饰器模式  SuagrFouthGradeSchoolReport -  FouthGradeSchoolReport </p>
 * @Author： -  
 * @CreatTime：2017年10月26日 下午5:21:41   
 * @Modify By：   
@@ -27,7 +27,7 @@ public class SuagrFouthGradeSchoolReport extends FouthGradeSchoolReport {
      * 先把最高成绩说出去
      */
     private void reportHighSorce(){
-        System.out.print("我英语得了90分,语文得了80分");
+        System.out.print("我英语得了90分,语文得了80分. ");
     }
 
     @Override

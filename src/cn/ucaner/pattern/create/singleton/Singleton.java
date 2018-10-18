@@ -56,6 +56,9 @@ public class Singleton {
     }
     
     public static void main(String[] args) {
+    	//单例模式获取单例实例化对象
+    	System.out.println(getInstance());
+    	
 		System.out.println(mInstance);
 	}
 }

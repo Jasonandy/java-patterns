@@ -28,17 +28,17 @@ public class FouthGradeSchoolReport extends SchoolReport {
 
     @Override
     public void report() {
-        System.out.print("数学60,语文:80,英语:90");
+        System.out.print(" 数学60,语文:80,英语:90 ");
     }
 
     @Override
     public void sign(String name) {
-        System.out.println("家长签名 : "+name);
+        System.out.println(" 家长签名:" + name);
     }
 
 	@Override
 	public void discuss(String discuss) {
-		 System.out.println("建议 : "+discuss);
+		 System.out.println(" 建议: " + discuss);
 	}
 
 }

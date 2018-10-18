@@ -34,7 +34,7 @@ public abstract class SchoolReport {
     public abstract void sign(String name);
     
     /**
-     * 建议
+     * 建议-给出建议
      */
      public abstract void discuss(String discuss);
 

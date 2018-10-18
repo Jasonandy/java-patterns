@@ -25,14 +25,23 @@ import cn.ucaner.pattern.structure.decorator.decoratorAbs.SchoolReport;
 * @version    V1.0
  */
 public class GoodBoyDecortaor extends Decorator {
+	
     public GoodBoyDecortaor(SchoolReport schoolReport) {
         super(schoolReport);
     }
 
+    /**
+     * @Description:报告之前 先包装一下数据 
+     * @Autor: Jason
+     */
     private void goodBoyDecorator(){
-        System.out.println("我在学校表现很好,没毛病");
+        System.out.println("我在学校表现很好,没毛病!");
     }
 
+    /**
+     * 1.goodBoyDecorator 
+     * 2.成绩报告.
+     */
     @Override
     public void report() {
         goodBoyDecorator();
@@ -40,8 +49,11 @@ public class GoodBoyDecortaor extends Decorator {
 
     }
 
+    /**
+     * 给出建议
+     */
 	@Override
 	public void discuss(String discuss) {
-		
+		System.out.println("表现好就可以骄傲了？我骄傲过吗？");
 	}
 }

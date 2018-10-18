@@ -42,6 +42,6 @@ public class RankDecortaor extends Decorator {
 
 	@Override
 	public void discuss(String discuss) {
-		
+		System.out.println("学校的排名这么靠前，还需要啥建议？建议低调一点，继续保持!");
 	}
 }
