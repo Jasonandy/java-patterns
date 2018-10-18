@@ -21,7 +21,7 @@
 | 类名                   | 描述      |
 | -------------------- | ------- |
 | Flyweight            | 抽象享元对象  |
-| ConcreateFlyweight_1 | 具体享元对象  |
+| ConcreateFlyweight | 具体享元对象  |
 | FlyweightFactory     | 享元工厂    |
 | FlyweightMain        | 享元模式执行类 |
 

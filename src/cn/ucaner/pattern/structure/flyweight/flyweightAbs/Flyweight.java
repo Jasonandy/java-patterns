@@ -13,7 +13,7 @@ package cn.ucaner.pattern.structure.flyweight.flyweightAbs;
 /**
 * @Package：cn.ucaner.pattern.structure.flyweight.flyweightAbs   
 * @ClassName：Flyweight   
-* @Description：   <p> 享元模式  --- 抽象享元对象</p>
+* @Description：   <p> 享元模式  --- 抽象享元对象 - https://www.cnblogs.com/lfxiao/p/6817141.html</p>
 * @Author： -  
 * @CreatTime：2017年10月26日 下午6:11:06   
 * @Modify By：   
@@ -22,17 +22,42 @@ package cn.ucaner.pattern.structure.flyweight.flyweightAbs;
 * @version    V1.0
  */
 public abstract class Flyweight {
-    //内部状态
+	
+	/**
+	 * 内部状态
+	 */
     private String intrinsic;
-    //外部状态
+
+    /**
+     * 外部状态
+     */
     protected final String Extrinsic;
-    //要求享元角色必须接受外部状态
+    
+    /**
+    * Flyweight.  要求享元角色必须接受外部状态
+    * @param extrinsic
+     */
     public Flyweight(String extrinsic) {
         Extrinsic = extrinsic;
     }
-    //定义业务操作
+    
+    /**
+     * @Description:定义业务操作
+     * @Autor: Jason
+     */
     public abstract void operate();
-    //内部状态的get和set
+    
+    /**
+     * @Description: 展示操作
+     * @Autor: Jason
+     */
+    public abstract void show();
+    
+    /**
+     * @Description: 内部状态的get和set
+     * @return String
+     * @Autor: Jason
+     */
     public String getIntrinsic() {
         return intrinsic;
     }
