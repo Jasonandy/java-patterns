@@ -32,9 +32,11 @@ public class BridgeTest {
 		 Driver mysqlDriver = new Mysql();  
 	     mysqlBridge.setDriver(mysqlDriver);  
 	     mysqlBridge.connect();  
-		  
+		 
+	     Bridge oracleBridge = new OracleBridge();
+	     
 	     Driver oracle = new Oracle();  
-	     mysqlBridge.setDriver(oracle);  
-	     mysqlBridge.connect();  
+	     oracleBridge.setDriver(oracle);  
+	     oracleBridge.connect();  
 	}
 }

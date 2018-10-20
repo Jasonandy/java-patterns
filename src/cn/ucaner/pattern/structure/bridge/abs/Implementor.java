@@ -23,7 +23,15 @@ package cn.ucaner.pattern.structure.bridge.abs;
  */
 public interface Implementor {
 	
+	/**
+	 * @Description: doSomethingA
+	 * @Autor: Jason
+	 */
     public void doSomethingA();
     
+    /**
+     * @Description: doSomethingB
+     * @Autor: Jason
+     */
     public void doSomethingB();
 }

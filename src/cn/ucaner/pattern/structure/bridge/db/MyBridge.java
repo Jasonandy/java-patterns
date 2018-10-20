@@ -23,4 +23,12 @@ package cn.ucaner.pattern.structure.bridge.db;
 */
 public class MyBridge extends Bridge{
 
+	/**  
+	* MyBridge.   
+	*/  
+	public MyBridge() {
+		super();
+		System.out.println("** MyBridge 桥接器准备完毕 **");
+	}
+
 }

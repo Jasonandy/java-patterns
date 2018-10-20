@@ -30,9 +30,13 @@ public class RefinedAbstraction extends Abstraction {
         super(implementor);
     }
 
+    /**
+     * 抽象类 - dosomething
+     */
     @Override
     public void doSomethings() {
         super.doSomethings();
         getImplementor().doSomethingB();
+        getImplementor().doSomethingA();
     }
 }

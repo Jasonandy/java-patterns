@@ -24,7 +24,9 @@ package cn.ucaner.pattern.structure.bridge.abs;
  */
 public abstract class Abstraction{
 	
-	
+	/**
+	 * Implementor  实现器   - 其实就是 抽象化  和 实现化  解耦 
+	 */
     private Implementor implementor;
 
     public Abstraction(Implementor implementor) {
@@ -32,7 +34,10 @@ public abstract class Abstraction{
     }
 
     public void doSomethings(){
+    	System.out.println("Abs 开始搞事情!");
         implementor.doSomethingA();
+        implementor.doSomethingB();
+        System.out.println("Abs 搞事情完毕!");
     }
 
     public Implementor getImplementor(){

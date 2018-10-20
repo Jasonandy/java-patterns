@@ -25,6 +25,9 @@ import cn.ucaner.pattern.structure.bridge.db.inf.Driver;
 */
 public abstract class Bridge {
 	
+	/**
+	 * JDBC 驱动
+	 */
 	private Driver driver;
 	
 	/**
