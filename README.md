@@ -1404,6 +1404,219 @@ public interface  DisplayElement {
 * 享元模式有点类似于单例模式，都是只生成一个对象来被共享使用。这里有个问题，那就是对共享对象的修改，为了避免出现这种情况，我们将这些对象的公共部分，或者说是不变化的部分抽取出来形成一个对象。这个对象就可以避免到修改的问题。
 * 享元的目的是为了减少不会要额内存消耗，将多个对同一对象的访问集中起来，不必为每个访问者创建一个单独的对象，以此来降低内存的消耗。
 
+```java
+/**
+ * <html>
+ * <body>
+ *  <P> Copyright JasonInternational</p>
+ *  <p> All rights reserved.</p>
+ *  <p> Created on 2018年10月18日 下午2:22:23</p>
+ *  <p> Created by Jason </p>
+ *  </body>
+ * </html>
+ */
+package cn.ucaner.pattern.structure.flyweight.flyweightAbs;
+
+/**
+* @Package：cn.ucaner.pattern.structure.flyweight.flyweightAbs
+* @ClassName：Shape
+* @Description：   <p> Shape </p>
+* @Author： - Jason
+* @CreatTime：2018年10月18日 下午2:22:23
+* @Modify By：
+* @ModifyTime：  2018年10月18日
+* @Modify marker：
+* @version    V1.0
+*/
+public abstract class Shape {
+
+	/**
+	 * 内部状态
+	 */
+    private String intrinsic;
+
+	/**
+	 * @Description: 假如我们有一个绘图的应用程序，通过它我们可以出绘制各种
+	 * 各样的形状、颜色的图形，那么这里形状和颜色就是内部状态了
+	 * 通过享元模式我们就可以实现该属性的共享了
+	 * @Autor: Jason
+	 */
+	public abstract void draw();
+
+
+	public String getIntrinsic() {
+		return intrinsic;
+	}
+
+	public void setIntrinsic(String intrinsic) {
+		this.intrinsic = intrinsic;
+	}
+
+}
+
+
+/**
+ * <html>
+ * <body>
+ *  <P> Copyright JasonInternational</p>
+ *  <p> All rights reserved.</p>
+ *  <p> Created on 2018年10月18日 下午2:23:26</p>
+ *  <p> Created by Jason </p>
+ *  </body>
+ * </html>
+ */
+package cn.ucaner.pattern.structure.flyweight;
+
+import cn.ucaner.pattern.structure.flyweight.flyweightAbs.Shape;
+
+/**
+* @Package：cn.ucaner.pattern.structure.flyweight
+* @ClassName：Circle
+* @Description：   <p> Circle </p>
+* @Author： - Jason
+* @CreatTime：2018年10月18日 下午2:23:26
+* @Modify By：
+* @ModifyTime：  2018年10月18日
+* @Modify marker：
+* @version    V1.0
+*/
+public class Circle extends Shape{
+
+	private String color;
+
+    public Circle(String color){
+        this.color = color;
+    }
+
+	@Override
+	public void draw() {
+		System.out.println("Draw a Circle Which Color is " + color +".");
+	}
+
+}
+
+
+/**
+ * <html>
+ * <body>
+ *  <P> Copyright JasonInternational</p>
+ *  <p> All rights reserved.</p>
+ *  <p> Created on 2018年10月18日 下午2:24:40</p>
+ *  <p> Created by Jason </p>
+ *  </body>
+ * </html>
+ */
+package cn.ucaner.pattern.structure.flyweight;
+
+import java.util.HashMap;
+
+import cn.ucaner.pattern.structure.flyweight.flyweightAbs.Shape;
+
+/**
+* @Package：cn.ucaner.pattern.structure.flyweight
+* @ClassName：DrawFactory
+* @Description：   <p> DrawFactory </p>
+* @Author： - Jason
+* @CreatTime：2018年10月18日 下午2:24:40
+* @Modify By：
+* @ModifyTime：  2018年10月18日
+* @Modify marker：
+* @version    V1.0
+*/
+public class DrawFactory {
+
+	/**
+	 * 定义一个池容器 - 享元池
+	 */
+    private static HashMap<String,Shape> colorsPool = new HashMap<String,Shape>();
+
+    /**
+     * @Description: 获取对象
+     * @param color
+     * @return Shape
+     * @Autor: Jason
+     */
+    public static Shape getShape(String color){
+
+    	/**
+    	 * 需要返回的对象
+    	 */
+    	Shape  shape  = null;
+
+        if(colorsPool.containsKey(color)){
+        	shape = colorsPool.get(color); //外部状态
+        }else {
+        	shape = new Circle(color); //如果不存在的话创建  放入池子中
+        	colorsPool.put(color,shape);
+        }
+        return shape;
+    }
+
+    /**
+     * @Description: 获取池的大小
+     * @return int   池子大小
+     * @Autor: Jason
+     */
+    public static  int getPoolSize(){
+        return colorsPool.size();
+    }
+
+}
+
+
+/**
+ * <html>
+ * <body>
+ *  <P> Copyright JasonInternational</p>
+ *  <p> All rights reserved.</p>
+ *  <p> Created on 2018年10月18日 下午2:28:01</p>
+ *  <p> Created by Jason </p>
+ *  </body>
+ * </html>
+ */
+package cn.ucaner.pattern.structure.flyweight;
+
+import cn.ucaner.pattern.structure.flyweight.flyweightAbs.Shape;
+
+/**
+* @Package：cn.ucaner.pattern.structure.flyweight
+* @ClassName：DrawMain
+* @Description：   <p> DrawMain </p>
+* @Author： - Jason
+* @CreatTime：2018年10月18日 下午2:28:01
+* @Modify By：
+* @ModifyTime：  2018年10月18日
+* @Modify marker：
+* @version    V1.0
+*/
+public class DrawMain {
+
+	public static void main(String[] args) {
+
+		Shape shape1 = DrawFactory.getShape("RED");
+        Shape shape2 = DrawFactory.getShape("GREY");
+        Shape shape3 = DrawFactory.getShape("GREEN");
+        Shape shape4 = DrawFactory.getShape("RED");
+        Shape shape5 = DrawFactory.getShape("GREY");
+        Shape shape6 = DrawFactory.getShape("GREY");
+
+        shape1.draw();
+        shape2.draw();
+        shape3.draw();
+        shape4.draw();
+        shape5.draw();
+        shape6.draw();
+
+        System.out.println("一共绘制了" + DrawFactory.getPoolSize() + "种颜色的圆形.");
+	}
+
+}
+
+
+
+
+
+```
 
 
 ### FAQ
