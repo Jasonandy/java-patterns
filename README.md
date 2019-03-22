@@ -1027,34 +1027,1067 @@ Cglib子类代理实现方法:
 
 
 # 外观模式
-*
-*
+* 外观模式（Facade）,他隐藏了系统的复杂性，并向客户端提供了一个可以访问系统的接口。这种类型的设计模式属于结构性模式。
+* 为子系统中的一组接口提供了一个统一的访问接口，这个接口使得子系统更容易被访问或者使用.
+```java
+package cn.ucaner.pattern.structure.decorator.decoratorAbs;
+
+/**
+* @Package：cn.ucaner.pattern.structure.decorator.decoratorAbs   
+* @ClassName：Decorator   
+* @Description：   <p> 装饰器模式  - 
+* 抽象装饰器 这种方式看起来和静态代理模式很像 {@link cn.ucaner.pattern.structure.proxy.staticProxy.Proxy }</p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午5:16:35   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public abstract class Decorator extends SchoolReport {
+	
+	/**
+	 * 成绩单的抽象类
+	 */
+    private SchoolReport  schoolReport;
+
+    /**
+    * Decorator.  将成绩单的属性包装到 Decorator里面去
+    * @param schoolReport
+     */
+    public Decorator(SchoolReport schoolReport) {
+        this.schoolReport = schoolReport;
+    }
+
+    /**
+     * 展示自己的成绩
+     */
+    public void report(){
+        schoolReport.report();
+    }
+
+    @Override
+    public void sign(String name) {
+        schoolReport.sign(name);
+    }
+}
+
+package cn.ucaner.pattern.structure.decorator.decoratorAbs;
+
+/**
+* @Package：cn.ucaner.pattern.structure.decorator.decoratorAbs   
+* @ClassName：SchoolReport   
+* @Description：   <p> 装饰器模式  -  成绩单抽象类</p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午5:17:14   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public abstract class SchoolReport {
+
+    /**
+     * 展示自己的成绩
+     */
+    public abstract void report();
+
+   /**
+    * 家长签名
+    */
+    public abstract void sign(String name);
+    
+    /**
+     * 建议-给出建议
+     */
+     public abstract void discuss(String discuss);
+
+}
+
+
+
+public class FouthGradeSchoolReport extends SchoolReport {
+
+
+    @Override
+    public void report() {
+        System.out.print(" 数学60,语文:80,英语:90 ");
+    }
+
+    @Override
+    public void sign(String name) {
+        System.out.println(" 家长签名:" + name);
+    }
+
+	@Override
+	public void discuss(String discuss) {
+		 System.out.println(" 建议: " + discuss);
+	}
+
+}
+
+public class GoodBoyDecortaor extends Decorator {
+	
+    public GoodBoyDecortaor(SchoolReport schoolReport) {
+        super(schoolReport);
+    }
+
+    /**
+     * @Description:报告之前 先包装一下数据 
+     * @Autor: Jason
+     */
+    private void goodBoyDecorator(){
+        System.out.println("我在学校表现很好,没毛病!");
+    }
+
+    /**
+     * 1.goodBoyDecorator 
+     * 2.成绩报告.
+     */
+    @Override
+    public void report() {
+        goodBoyDecorator();
+        super.report();
+
+    }
+
+    /**
+     * 给出建议
+     */
+	@Override
+	public void discuss(String discuss) {
+		System.out.println("表现好就可以骄傲了？我骄傲过吗？");
+	}
+}
+
+public class RankDecortaor extends Decorator {
+
+    public RankDecortaor(SchoolReport schoolReport) {
+        super(schoolReport);
+    }
+
+    private void rankDecortaor(){
+        System.out.println("在学校排名也很靠前");
+    }
+
+    @Override
+    public void report() {
+        rankDecortaor();
+        super.report();
+    }
+
+	@Override
+	public void discuss(String discuss) {
+		System.out.println("学校的排名这么靠前，还需要啥建议？建议低调一点，继续保持!");
+	}
+}
+
+public class SuagrFouthGradeSchoolReport extends FouthGradeSchoolReport {
+
+    /**
+     * 先把最高成绩说出去
+     */
+    private void reportHighSorce(){
+        System.out.print("我英语得了90分,语文得了80分. ");
+    }
+
+    @Override
+    public void report() {
+        reportHighSorce();
+        super.report();
+    }
+}
+
+package cn.ucaner.pattern.structure.decorator;
+
+import cn.ucaner.pattern.structure.decorator.decoratorAbs.SchoolReport;
+import cn.ucaner.pattern.structure.decorator.decoratorIml.FouthGradeSchoolReport;
+import cn.ucaner.pattern.structure.decorator.decoratorIml.GoodBoyDecortaor;
+import cn.ucaner.pattern.structure.decorator.decoratorIml.RankDecortaor;
+import cn.ucaner.pattern.structure.decorator.decoratorIml.SuagrFouthGradeSchoolReport;
+
+/**
+* @Package：cn.ucaner.pattern.structure.decorator   
+* @ClassName：DecoratorMain   
+* @Description：   <p> 装饰器模式  -  装饰器模式运行类 
+*  {@link https://www.cnblogs.com/octobershiner/archive/2011/11/04/2236730.html}
+*  </p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午5:15:16   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public class DecoratorMain   {
+
+    public static void main(String[] args) {
+        absDecorator();
+        extendsDecorator();
+        normol();
+    }
+
+    /**
+     * @Description: 一般情况下   -- 没有包装的情况下
+     * @Autor: Jason 
+     */
+    private static void normol(){
+    	
+    	System.out.println("****************没有包装成绩的情况下*********************");
+        //把成绩单领回家
+        SchoolReport schoolReport=new FouthGradeSchoolReport();
+        //家长看成绩单
+        schoolReport.report();
+        schoolReport.sign(" 大家好我是校长");
+        //schoolReport.discuss("我建议你别浪费钱!");
+        //准备挨打
+        System.out.println("********************************************************");
+    }
+
+    /**
+     * @Description:如果用继承装饰
+     * @Autor: Jason
+     */
+    private static void extendsDecorator(){
+    	/**
+    	 * 这里是被包装了的成绩单  家长看到的只是比较好的成绩
+    	 */
+        SchoolReport schoolReport = new SuagrFouthGradeSchoolReport();
+
+        /**
+         * 看成绩单
+         */
+        schoolReport.report();
+        
+        /**
+         * 签字确认
+         */
+        schoolReport.sign("马化腾");
+
+        /**
+        * 继承方式的弊端,如果以后要有五年级 六年级 七年级的成绩单,
+         * 那么需要你分别对这几个年级的成绩单进行装饰,
+         * 如果需要装饰的条件一旦很多,比如说平时表现啊什么的,就得一一去装饰,带来类的爆炸性增长,
+        **/
+    }
+
+
+    /**
+     * @Description: 利用抽象装饰
+     * @Autor: Jason
+     */
+    private static void absDecorator(){
+        // ******************************** CallMethod Start *****************************************
+    	
+    	/**
+    	 * 原始的成绩  -- 没有经过包装的成绩
+    	 */
+        SchoolReport schoolReport=new FouthGradeSchoolReport();
+        /**
+         * 装饰表现
+         */
+        schoolReport=new GoodBoyDecortaor(schoolReport);
+        
+        /**
+         * 装饰排名
+         */
+        schoolReport=new RankDecortaor(schoolReport);
+        
+        /**
+         * 装饰了几次后  - 开始报告成绩!
+         */
+        schoolReport.report();
+        
+        /**
+         * 查阅者签名确认
+         */
+        schoolReport.sign("马云");
+        
+        schoolReport.discuss("建议好好读书！"); //这里没有打印出来
+        
+        // ******************************** CallMethod End *****************************************
+    }
+
+}
+
+
+```
 
 # 桥接模式
-*
-*
+* 桥接模式即将抽象部分与它的实现部分分离开来，使他们都可以独立变化
+* 桥接模式将继承关系转化成关联关系，它降低了类与类之间的耦合度，减少了系统中类的数量，也减少了代码量
+
+```java
+package cn.ucaner.pattern.structure.bridge.abs;
+
+/**
+* @Package：cn.ucaner.pattern.structure.bridge.abs   
+* @ClassName：Abstraction   
+* @Description：   <p> 桥接模式 --- 抽象化角色</p>
+* <pre> 桥接Bridge是用于把 [抽象化与实现化]解耦，使得二者可以独立变化 </pre>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午5:58:30   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public abstract class Abstraction{
+	
+	/**
+	 * Implementor  实现器   - 其实就是 抽象化  和 实现化  解耦 
+	 */
+    private Implementor implementor;
+
+    public Abstraction(Implementor implementor) {
+        this.implementor = implementor;
+    }
+
+    public void doSomethings(){
+    	System.out.println("Abs 开始搞事情!");
+        implementor.doSomethingA();
+        implementor.doSomethingB();
+        System.out.println("Abs 搞事情完毕!");
+    }
+
+    public Implementor getImplementor(){
+        return implementor;
+    }
+}
+
+
+package cn.ucaner.pattern.structure.bridge.abs;
+
+/**
+* @Package：cn.ucaner.pattern.structure.bridge.abs   
+* @ClassName：Implementor   
+* @Description：   <p> 桥接模式 --- 实现化角色 </p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午5:58:48   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public interface Implementor {
+	
+	/**
+	 * @Description: doSomethingA
+	 * @Autor: Jason
+	 */
+    public void doSomethingA();
+    
+    /**
+     * @Description: doSomethingB
+     * @Autor: Jason
+     */
+    public void doSomethingB();
+}
+
+
+package cn.ucaner.pattern.structure.bridge;
+
+import cn.ucaner.pattern.structure.bridge.abs.Implementor;
+
+/**
+* @Package：cn.ucaner.pattern.structure.bridge   
+* @ClassName：ConcreteImplementor   
+* @Description：   <p> 桥接模式  --  具体实现类</p>
+* @Author： -  
+* @CreatTime：2017年10月26日 下午5:59:37   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public class ConcreteImplementor implements Implementor {
+	
+    @Override
+    public void doSomethingA() {
+        System.out.println("bridge do something A");
+    }
+
+    @Override
+    public void doSomethingB() {
+        System.out.println("bridge do something B");
+    }
+}
+
+package cn.ucaner.pattern.structure.bridge;
+
+import cn.ucaner.pattern.structure.bridge.abs.Implementor;
+
+/**
+*    
+* @Package：cn.ucaner.pattern.structure.bridge   
+* @ClassName：BridgeMain   
+* @Description：   <p> 桥接模式  -- 执行类</p>
+* @Author： - 
+* @CreatTime：2017年10月26日 下午5:59:16   
+* @Modify By：   
+* @ModifyTime：  
+* @Modify marker：   
+* @version    V1.0
+ */
+public class BridgeMain {
+
+
+    public static void main(String[] args) {
+    	/**
+    	 * 实现化角色
+    	 */
+        Implementor implementor = new ConcreteImplementor();
+        
+        /**
+         * 抽象化角色
+         */
+        RefinedAbstraction refinedAbstraction = new RefinedAbstraction(implementor);
+        
+        /**
+         * 抽象化角色搞事情
+         */
+        refinedAbstraction.doSomethings();
+        
+        implementor.doSomethingA();
+        implementor.doSomethingB();
+    }
+}
+
+
+
+
+```
 
 # 组合模式
 *
 *
 
 # 享元模式
-*
-*
+* String常量池、数据库连接池、缓冲池等等都是享元模式的应用，所以说享元模式是池技术的重要实现方式.
+```java
+package cn.ucaner.pattern.structure.flyweight.flyweightAbs;
+
+/**     
+* @Package：cn.ucaner.pattern.structure.flyweight.flyweightAbs   
+* @ClassName：Shape   
+* @Description：   <p> Shape </p>
+* @Author： - Jason   
+* @CreatTime：2018年10月18日 下午2:22:23   
+* @Modify By：   
+* @ModifyTime：  2018年10月18日
+* @Modify marker：    
+* @version    V1.0
+*/
+public abstract class Shape {
+	
+	/**
+	 * 内部状态
+	 */
+    private String intrinsic;
+	
+	/**
+	 * @Description: 假如我们有一个绘图的应用程序，通过它我们可以出绘制各种
+	 * 各样的形状、颜色的图形，那么这里形状和颜色就是内部状态了
+	 * 通过享元模式我们就可以实现该属性的共享了
+	 * @Autor: Jason
+	 */
+	public abstract void draw();
+
+	
+	public String getIntrinsic() {
+		return intrinsic;
+	}
+
+	public void setIntrinsic(String intrinsic) {
+		this.intrinsic = intrinsic;
+	}
+
+}
+
+
+
+public class Circle extends Shape{
+	
+	private String color;
+	
+    public Circle(String color){
+        this.color = color;
+    }
+
+	@Override
+	public void draw() {
+		System.out.println("Draw a Circle Which Color is " + color +".");
+	}
+
+}
+
+public class DrawFactory {
+
+	/**
+	 * 定义一个池容器 - 享元池
+	 */
+    private static HashMap<String,Shape> colorsPool = new HashMap<String,Shape>();
+
+    /**
+     * @Description: 获取对象
+     * @param color
+     * @return Shape
+     * @Autor: Jason
+     */
+    public static Shape getShape(String color){
+    	
+    	/**
+    	 * 需要返回的对象
+    	 */
+    	Shape  shape  = null;
+        
+        if(colorsPool.containsKey(color)){
+        	shape = colorsPool.get(color); //外部状态
+        }else {
+        	shape = new Circle(color); //如果不存在的话创建  放入池子中
+        	colorsPool.put(color,shape);
+        }
+        return shape;
+    }
+
+    /**
+     * @Description: 获取池的大小
+     * @return int   池子大小
+     * @Autor: Jason
+     */
+    public static  int getPoolSize(){
+        return colorsPool.size();
+    }
+    
+}
+
+
+package cn.ucaner.pattern.structure.flyweight;
+
+import cn.ucaner.pattern.structure.flyweight.flyweightAbs.Shape;
+
+/**     
+* @Package：cn.ucaner.pattern.structure.flyweight   
+* @ClassName：DrawMain   
+* @Description：   <p> DrawMain </p>
+* @Author： - Jason   
+* @CreatTime：2018年10月18日 下午2:28:01   
+* @Modify By：   
+* @ModifyTime：  2018年10月18日
+* @Modify marker：   
+* @version    V1.0
+*/
+public class DrawMain {
+	
+	public static void main(String[] args) {
+		
+		Shape shape1 = DrawFactory.getShape("RED");
+        Shape shape2 = DrawFactory.getShape("GREY");
+        Shape shape3 = DrawFactory.getShape("GREEN");
+        Shape shape4 = DrawFactory.getShape("RED");
+        Shape shape5 = DrawFactory.getShape("GREY");
+        Shape shape6 = DrawFactory.getShape("GREY");
+        
+        shape1.draw();
+        shape2.draw();
+        shape3.draw();
+        shape4.draw();
+        shape5.draw();
+        shape6.draw();
+        
+        System.out.println("一共绘制了" + DrawFactory.getPoolSize() + "种颜色的圆形.");
+	}
+
+}
+
+```
+
 
 
 # 责任链模式
 * 抽象处理者(Handler)角色：定义出一个处理请求的接口。如果需要，接口可以定义 出一个方法以设定和返回对下家的引用。这个角色通常由一个Java抽象类或者Java接口实现。上图中Handler类的聚合关系给出了具体子类对下家的引用，抽象方法handleRequest()规范了子类处理请求的操作。
 * 具体处理者(BossHandler)角色：具体处理者接到请求后，可以选择将请求处理掉，或者将请求传给下家。由于具体处理者持有对下家的引用，因此，如果需要，具体处理者可以访问下家。
+```java
+public abstract class Handler {
+	
+	/**
+	 * 下一个执行者
+	 */
+    private Handler nextHandler;
+
+    /**
+     * @Description: 当前执行者对请求做处理   需要处理的Biz对象
+     * @param handLeve
+     * @return boolean
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
+    public final boolean handlerRequst(int  handLeve){
+    	
+        boolean bReq=false;
+        /**
+         * 判断自己是否可以审核  - 可以审核的话  直接审核完毕
+         */
+        if(getLevel()>=handLeve){
+            System.out.println(getnName()+" :可以审批");
+            return true;
+        }else {
+            if(this.nextHandler!=null){
+            	/**
+            	 * 超过阈值 向上一级提交申请
+            	 */
+            	//System.out.println(String.format("金额%s超过%s的审核级别 向上一级%s提交申请 ",handLeve,getnName(), nextHandler.getnName()));
+                System.out.println(getnName()+"向"+nextHandler.getnName()+"递交请求");
+                /**
+                 * 向上一级请求
+                 */
+                bReq=nextHandler.handlerRequst(handLeve);
+                /**
+                 * 根据上级的答复做出回应
+                 */
+                if(bReq){
+                    System.out.println(getnName()+" :"+nextHandler.getnName()+"说可以审批");
+                }else {
+                    System.out.println(getnName()+" :"+nextHandler.getnName()+"说不可以审批");
+                }
+            }else {
+            	/**
+            	 * 到这边已经没有下一个处理者了 
+            	 */
+                System.out.println(getnName()+" :金额太大了");
+            }
+        }
+        return bReq;
+    }
+
+    public void setNextHandler(Handler nextHandler) {
+        this.nextHandler = nextHandler;
+    }
+    
+    /**
+     * @Description: 可以审批的金额
+     * @return int
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
+    public abstract int getLevel();
+
+
+
+    /**
+     * @Description: 处理者名字
+     * @return String
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
+    public abstract String getnName();
+
+}
+
+
+
+public class BossHandler extends Handler {
+
+	private int moneny;
+	
+    @Override
+    public int getLevel() {
+        return this.moneny;
+    }
+
+    @Override
+    public String getnName() {
+        return "BOSS";
+    }
+
+	public int getMoneny() {
+		return moneny;
+	}
+
+	public void setMoneny(int moneny) {
+		this.moneny = moneny;
+	}
+
+	/**  
+	* BossHandler. 
+	* @param moneny  
+	*/  
+	public BossHandler(int moneny) {
+		super();
+		this.moneny = moneny;
+	}
+    
+}
+
+public class ChainOfReponsibilityMain {
+
+    public static void main(String[] args) {
+    	/**
+    	 * 我要报销的钱数
+    	 */
+        int money=10000;
+        
+        /**
+         * 初始化各个处理者
+         */
+        Handler manager = new ManagerHandler(200); 
+        Handler finance = new FinanceHandler(500);
+        Handler boss = new BossHandler(1000);
+        
+        //manager -> finace -> boss
+        
+        /**
+         * 设置链中的顺序
+         */
+        manager.setNextHandler(finance);
+        
+        finance.setNextHandler(boss);
+        
+        //do 
+        System.out.println("I want 报销 "+money+" yuan.");
+        if (manager.handlerRequst(money)) {
+            System.out.println("报销Success!");
+        } else {
+            System.out.println("报销Fail!");
+        }
+    }
+
+}
+
+```
+
 
 
 # 命令模式
 * 将一个请求封装为一个对象，从而让我们可用不同的请求对客户进行参数化；对请求排队或者记录请求日志，以及支持可撤销的操作。命令模式是一种对象行为型模式，其别名为动作(Action)模式或事务(Transaction)模式。
 *  命令模式的定义比较复杂，提到了很多术语，例如“用不同的请求对客户进行参数化”、“对请求排队”，“记录请求日志”、“支持可撤销操作”等，在后面我们将对这些术语进行一一讲解
 
+```java
+public abstract class Command {
+	
+	/**
+	 * 项目经理
+	 */
+	protected Projecter pm = new Projecter();
+	
+	/**
+	 * 产品经理
+	 */
+    protected Product product = new Product();
+    
+    /**
+     * UI
+     */
+    protected UI ui = new UI();
+    
+    /**
+     * 码农实现
+     */
+    protected Code code =new Code();
+    
+    
+/*    private List<Group> gps;
+    
+	public List<Group> getGps() {
+		return gps;
+	}
+
+	public void setGps(List<Group> gps) {
+		this.gps = gps;
+	}*/
+
+
+	/**
+     * @Description: execute
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
+    public abstract void execute();
+}
+
+public abstract class Group {
+	
+	/**
+	 * @Description: 得到命令
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
+	public abstract void getCommand();
+	
+	/**
+	 * @Description: 新增一个功能
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
+    public abstract void doAdd();
+    
+    /**
+     * @Description: 减去一个功能
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
+    public abstract  void doDel();
+    
+    /**
+     * @Description: 开始实施
+     * @Autor: Jason - jasonandy@hotmail.com
+     */
+    public abstract void plan();
+
+}
+
+public class Code extends Group {
+
+
+    @Override
+    public void getCommand() {
+        System.out.println("开发收到命令");
+    }
+
+    @Override
+    public void doAdd() {
+        System.out.println("开发新写了一个页面");
+    }
+
+    @Override
+    public void doDel() {
+        System.out.println("开发注释了一个页面");
+    }
+
+    @Override
+    public void plan() {
+        System.out.println("开发变更完毕");
+    }
+}
+
+public class CommandMain {
+
+	/**
+	 * @Description: Just for test
+	 * @Autor: Jason- jasonandy@hotmail.com
+	 */
+    public static void main(String[] args) {
+        Invoker invoker=new Invoker();
+        invoker.setCommand(new AddPageCommand());
+        invoker.Call();
+    }
+
+}
+
+public class Invoker   {
+	
+    private Command command;
+
+    public void setCommand(Command command) {
+        this.command = command;
+    }
+
+    public  void Call() {
+        this.command.execute();
+    }
+}
+
+
+```
+
+
 # 观察者模式
 * 在对象之间定义了一对多的依赖，这样一来，当一个对象改变状态，依赖它的对象会收到通知并自动更新
 * 其实就是发布订阅模式，发布者发布信息，订阅者获取信息，订阅了就能收到信息，没订阅就收不到信息
+```java
+public interface  ObserverInf {
+	
+	/**
+	 * @Description: 更新数据 - 数据发生改变的时候通知到其他地方.
+	 * @param temp  温度
+	 * @param humidity 湿度
+	 * @param pressure 气压
+	 * @Autor: Jason
+	 */
+	public void update(float temperature, float humidity, float pressure);
+
+}
+```
+```java
+public interface  DisplayElement {
+
+	/**
+	 * @Description: 外观显示方法  - 展示 被观察者 的具体的信息的方法.
+	 * @Autor: Jason
+	 */
+    public void display();
+    
+    /**
+     * @Description:开始同步数据.
+     * @Autor: Jason
+     */
+    public void sysnc();
+}
+
+
+public class ForecastDisplay implements ObserverInf, DisplayElement{
+
+	private float currentPressure = 28.82f; // 当前气压
+    private float lastPressure;             // 上一次的气压
+    private Subject weatherData;            // 主题
+
+    public ForecastDisplay(Subject weatherData) {
+        this.weatherData = weatherData;
+        this.weatherData.registerObserver(this);
+    }
+
+	@Override
+	public void display() {
+		if (currentPressure > lastPressure) {
+            System.out.println("NO.3: 天气预报：温度正在持续上升！");
+        } else {
+            System.out.println("NO.3: 天气预报：注意气温下降了，可能有雨！");
+        }
+	}
+
+	@Override
+	public void update(float temperature, float humidity, float pressure) {
+		lastPressure = currentPressure;
+        currentPressure = pressure;
+        display();
+	}
+
+	@Override
+	public void sysnc() {
+		System.out.println("FORECASTDISPLAY - 开始数据同步.");
+	}
+
+}
+
+public interface Subject {
+	
+	/**
+	 * @Description: 添加一个观察者
+	 * @param observer observer 
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
+    public void Attach(Observer observer);
+    
+    /**
+	 * @Description: 删除一个观察者
+	 * @param observer  observer
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
+    public void Detach(Observer observer);
+    
+    /**
+	 * @Description: 通知所有的观察者
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
+    public void Notify();
+    
+}
+
+public class WeatherData implements Subject{
+
+	/**
+	 * 所有的订阅者 都存放到一起. - 维护所有注册的观察者 - 注册到这里  
+	 * 链表方便Obj的添加删除操作.
+	 */
+    private LinkedList<ObserverInf> observers;
+
+    /**
+     *温度 
+     */
+    private float temperature; 
+    
+    /**
+     * 湿度
+     */
+    private float humidity; 
+    
+    /**
+     * 气压
+     */
+    private float pressure; 
+
+    /**
+     * 构造时 - new出列表对象
+     * WeatherData.
+     */
+    public WeatherData(){
+        observers = new LinkedList<ObserverInf>();
+    }
+
+    /**
+     * @Description: 将观察者注册到列表中 
+     * @param o 观察者
+     * @Autor: Jason
+     */
+    @Override
+    public void registerObserver(ObserverInf o) {
+        observers.add(o);
+    }
+
+    /**
+     * @Description: 移除
+     * @param o  取消订阅的观察者
+     * @Autor: Jason
+     */
+    @Override
+    public void removeObserver(ObserverInf o) {
+        int i = observers.indexOf(o); //判断对象是不是在订阅者之中 要是存在的话就移除
+        if (i >= 0){
+            observers.remove(i);
+        }else {
+        	System.out.println(o.toString()+"没有订阅过，无法进行退订操作!");
+        }
+    }
+
+    
+    /**
+     * @Description: 通知订阅列表里的所有的订阅者
+     * @Autor: Jason
+     */
+    @Override
+    public void notifyObservers() {
+    	for (ObserverInf observerInf : observers) {
+    		observerInf.update(temperature, humidity, pressure);
+		}
+       /* for (int i = 0; i < observers.size(); ++i){
+        	ObserverInf observerInf = (ObserverInf)observers.get(i);
+        	observerInf.update(temperature, humidity, pressure);
+        }*/
+    }
+
+    /**
+     * @Description: 当数据发生改变的时候 推送给订阅的人
+     * @Autor: Jason
+     */
+    public void measurementsChanged(){
+        notifyObservers();
+    }
+
+    public void setMeasurements(float temperature, float humidity, float pressure){
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        measurementsChanged(); //发生改变 通知所有的订阅者
+    }
+}
+
+public interface Subject {
+
+	/**
+	 * @Description: 用以注册观察者   - 也就是都有谁来关注这个 可以理解为订阅这个消息
+	 * @param o 具体的观察者
+	 * @Autor: Jason
+	 */
+    public void registerObserver(ObserverInf o);
+
+    /**
+     * @Description: 用以删除观察者  - 也就会谁会来退订这个所观察的对象  - 可以通俗的理解为退订
+     * @param o 具体的观察者
+     * @Autor: Jason
+     */
+    public void removeObserver(ObserverInf o);
+
+    /**
+     * @Description: 来通知这个观察者 
+     * @Autor: Jason
+     */
+    public void notifyObservers();
+}
+
+```
 
 # 状态模式
 * 定义对象间的一种一对多的依赖关系,当一个对象的状态发生改变时,所有依赖于它的对象都得到通知并被自动更新。允许一个对象在其内部状态改变时改变它的行为。对象看起来似乎修改了它的类
@@ -1611,10 +2644,6 @@ public class DrawMain {
 	}
 
 }
-
-
-
-
 
 ```
 
